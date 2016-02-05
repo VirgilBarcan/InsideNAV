@@ -18,10 +18,10 @@ Besides those sensors, the app will use:
  * Bluetooth (some sensors exist that can be used to locate a device via Bluetooth)
 
 Each sensor data is collected by a specialised class, which in turn sends it to processing.
-The processing part of the application will contain different algorithms:
+###The processing part of the application will contain different algorithms:
  * Step counter
  * Step distance estimation
  * Kalman filter
  * Triangulation
 
-The processed data is then send to the frontend and displayed to the user.
+###The processed data is then send to the frontend and displayed to the user.
