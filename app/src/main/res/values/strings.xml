@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">InsideNAV</string>
 
-    <string name="text_view_text">Hello InsideNAV!</string>
+    <string name="text_view_text">The number of steps done:</string>
     <string name="action_settings">Settings</string>
+    <string name="number_of_steps_text">0 steps</string>
 </resources>
