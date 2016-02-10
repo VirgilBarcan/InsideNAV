@@ -13,36 +13,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is used to get Accelerometer data from the Android system
+ * This class is used to get Gyro data from the Android system
  * It registers to receive data at a given samplingRate
- * Created by virgil on 06.02.2016.
+ * Created by virgil on 10.02.2016.
  */
-public class Accelerometer implements SensorEventListener, Subject {
+public class Gyro implements SensorEventListener, Subject {
 
     private Context context;
 
     private SensorManager sensorManager;
-    private Sensor accelerometer;
+    private Sensor gyro;
     private int samplingRate;
 
     private List<Observer> observerList;
     private SensorEvent sensorData;
 
-    public Accelerometer(Context context) {
-        System.out.println("Accelerometer.Accelerometer");
+    public Gyro(Context context) {
+        System.out.println("Gyro.Gyro");
         this.context = context;
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        gyro = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         samplingRate = SensorManager.SENSOR_DELAY_NORMAL;
 
         observerList = new ArrayList<>();
     }
 
     public boolean registerToSensor() {
-        if (accelerometer == null)
+        if (gyro == null)
             return false;
 
-        return sensorManager.registerListener(this, accelerometer, samplingRate);
+        return sensorManager.registerListener(this, gyro, samplingRate);
     }
 
     public void unregisterFromSensor() {

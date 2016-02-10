@@ -13,36 +13,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is used to get Accelerometer data from the Android system
+ * This class is used to get Magnetometer data from the Android system
  * It registers to receive data at a given samplingRate
- * Created by virgil on 06.02.2016.
+ * Created by virgil on 10.02.2016.
  */
-public class Accelerometer implements SensorEventListener, Subject {
+public class Magnetometer implements SensorEventListener, Subject {
 
     private Context context;
 
     private SensorManager sensorManager;
-    private Sensor accelerometer;
+    private Sensor magnetometer;
     private int samplingRate;
 
     private List<Observer> observerList;
     private SensorEvent sensorData;
 
-    public Accelerometer(Context context) {
-        System.out.println("Accelerometer.Accelerometer");
+    public Magnetometer(Context context) {
+        System.out.println("Magnetometer.Magnetometer");
         this.context = context;
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         samplingRate = SensorManager.SENSOR_DELAY_NORMAL;
 
         observerList = new ArrayList<>();
     }
 
     public boolean registerToSensor() {
-        if (accelerometer == null)
+        if (magnetometer == null)
             return false;
 
-        return sensorManager.registerListener(this, accelerometer, samplingRate);
+        return sensorManager.registerListener(this, magnetometer, samplingRate);
     }
 
     public void unregisterFromSensor() {

@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This class implements the simplest step detection algorithm:
+ *   - consider only the z axis of the accelerometer;
+ *   - if the read value is bigger then an lower limit and the interval of time since the
+ * last step is at leas 350 ms, count the step
  * Created by virgil on 06.02.2016.
  */
 public class SimpleStepDetection implements Subject, Observer {

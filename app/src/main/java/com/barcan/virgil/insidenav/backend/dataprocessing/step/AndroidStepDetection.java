@@ -1,4 +1,4 @@
-package com.barcan.virgil.insidenav.backend.dataacquisition;
+package com.barcan.virgil.insidenav.backend.dataprocessing.step;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -13,36 +13,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class is used to get Accelerometer data from the Android system
- * It registers to receive data at a given samplingRate
- * Created by virgil on 06.02.2016.
+ * Created by virgil on 10.02.2016.
  */
-public class Accelerometer implements SensorEventListener, Subject {
+public class AndroidStepDetection implements SensorEventListener, Subject {
 
     private Context context;
 
     private SensorManager sensorManager;
-    private Sensor accelerometer;
+    private Sensor stepDetector;
     private int samplingRate;
 
-    private List<Observer> observerList;
-    private SensorEvent sensorData;
+    private int noOfSteps = 0;
 
-    public Accelerometer(Context context) {
-        System.out.println("Accelerometer.Accelerometer");
+    private List<Observer> observerList;
+
+    public AndroidStepDetection(Context context) {
+        System.out.println("AndroidStepDetection.AndroidStepDetection");
         this.context = context;
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        samplingRate = SensorManager.SENSOR_DELAY_NORMAL;
+        stepDetector = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        samplingRate = SensorManager.SENSOR_DELAY_FASTEST;
 
         observerList = new ArrayList<>();
+
+        registerToSensor();
     }
 
     public boolean registerToSensor() {
-        if (accelerometer == null)
+        if (stepDetector == null)
             return false;
 
-        return sensorManager.registerListener(this, accelerometer, samplingRate);
+        return sensorManager.registerListener(this, stepDetector, samplingRate);
     }
 
     public void unregisterFromSensor() {
@@ -53,11 +54,21 @@ public class Accelerometer implements SensorEventListener, Subject {
         this.samplingRate = samplingRate;
     }
 
+    private boolean stepAlgorithm(SensorEvent sensorData) {
+        if (sensorData.values[0] == 1.0) {
+            ++noOfSteps;
+            notifyObservers();
+
+            System.out.println("AndroidStepDetection.stepAlgorithm: another step detected!");
+        }
+
+        return true;
+    }
+
     //region SensorEventListener methods
     @Override
     public void onSensorChanged(SensorEvent event) {
-        sensorData = event;
-        notifyObservers();
+        stepAlgorithm(event);
     }
 
     @Override
@@ -80,7 +91,7 @@ public class Accelerometer implements SensorEventListener, Subject {
     @Override
     public boolean notifyObservers() {
         for (Observer observer : observerList)
-            observer.update(sensorData);
+            observer.update(noOfSteps);
         return false;
     }
     //endregion Subject methods

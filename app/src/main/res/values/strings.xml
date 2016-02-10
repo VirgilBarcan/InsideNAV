@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">InsideNAV</string>
 
-    <string name="text_view_text">The number of steps done:</string>
+    <string name="text_view_custom_algorithm_text">The number of counted by the custom algorithm:</string>
+    <string name="text_view_android_algorithm_text">The number of counted by the Android algorithm:</string>
     <string name="action_settings">Settings</string>
     <string name="number_of_steps_text">0 steps</string>
 </resources>

@@ -11,15 +11,27 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:text="@string/text_view_text"
+        android:text="@string/text_view_custom_algorithm_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/no_of_steps_text_view"
+        android:id="@+id/no_of_steps_custom_algorithm_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/number_of_steps_text"
         android:textSize="36sp" />
 
+
+    <TextView
+        android:text="@string/text_view_android_algorithm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/no_of_steps_android_algorithm_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_of_steps_text"
+        android:textSize="36sp" />
 </LinearLayout>
