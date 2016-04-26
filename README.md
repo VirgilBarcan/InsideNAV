@@ -25,3 +25,7 @@ Each sensor data is collected by a specialised class, which in turn sends it to 
  * Triangulation
 
 ###The processed data is then send to the frontend and displayed to the user.
+
+
+###Bio
+https://www.ece.nus.edu.sg/stfpage/elesohws/PerCom_Pedestrian_Tracking.pdf
