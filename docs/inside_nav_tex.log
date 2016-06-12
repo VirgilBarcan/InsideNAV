@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 16:38
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -10,8 +10,8 @@ le.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 
 ("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size1
-0.clo"
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+2.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -550,8 +550,7 @@ Package newunicodechar Warning: This package won't work without loading
 (newunicodechar)                `inputenc' or `inputenx' with the `utf8' option
 .
 
-)
-No file inside_nav_tex.aux.
+) (inside_nav_tex.aux)
 \openout1 = `inside_nav_tex.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -650,56 +649,61 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 def"
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
-
-LaTeX Warning: Reference `tab:widgets' on page 1 undefined on input line 49.
-
-[1
+("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32
+.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+) [1
 
 {C:/Users/Virgil Barcan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 83.
+Overfull \hbox (30.2762pt too wide) in paragraph at lines 65--66
+[]\OT1/cmr/m/n/12 TODO: Ada-u-gare logo-uri An-droid: http://www.androidcentral
+.com/androids-
+ []
 
-("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscm
-r.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
- [2] (inside_nav_tex.aux)
+[2] [3] [4] [5]
+Overfull \hbox (8.96947pt too wide) in paragraph at lines 136--137
+\OT1/cmr/m/n/12 Aceasta ver-siune ofe-rea o experien[]a uni-fi-cata smartpho
+ne-tableta, ea ^nlocuind
+ []
 
-LaTeX Warning: There were undefined references.
+[6]
+Overfull \hbox (6.20297pt too wide) in paragraph at lines 157--158
+\OT1/cmr/m/n/12 Blu-e-to-oth Low Energy []i a OpenGL ES3.0, care adu-cea spo-ru
+ri de performan[]a
+ []
+
+[7] [8]
+Overfull \hbox (3.2862pt too wide) in paragraph at lines 189--190
+\OT1/cmr/m/n/12 Android Mar-sh-ma-l-low a in-tro-dus un nou sis-tem de per-mi-s
+iuni pen-tru aplica[]ii.
+ []
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Overfull \hbox (2.26408pt too wide) in paragraph at lines 191--192
+[]\OT1/cmr/m/n/12 O alta com-po-nenta a sis-te-mu-lui unde cei de la Go-o-gle
+ au adus ^mbunata[]iri
+ []
 
- ) 
+[9] [10] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 14611 strings out of 493335
- 281556 string characters out of 3126764
- 314501 words of memory out of 3000000
- 17851 multiletter control sequences out of 15000+200000
- 9630 words of font info for 35 fonts, out of 3000000 for 9000
+ 14850 strings out of 493335
+ 284184 string characters out of 3126764
+ 320541 words of memory out of 3000000
+ 18089 multiletter control sequences out of 15000+200000
+ 10541 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,56p,448b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Virgil Barcan/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Virgi
-l Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Virgil Barcan/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Vi
-rgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Virgil Barcan/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Vir
-gil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-9.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb>
-Output written on inside_nav_tex.pdf (2 pages, 138181 bytes).
+ 62i,7n,56p,756b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Virgil Barcan/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
+ers/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+Output written on inside_nav_tex.pdf (10 pages, 109273 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
