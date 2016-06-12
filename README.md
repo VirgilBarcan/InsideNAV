@@ -7,7 +7,7 @@ The project is build as an Android application, using the Android system.
 The application will get all data from the smartphone's sensors and process it in such a way that a
 prediction of the current position will be given as an output.
 
-###The sensors that will be take into account are:
+###The sensors that will be taken into account are:
  * Accelerometer
  * Gyroscope
  * Magnetometer
