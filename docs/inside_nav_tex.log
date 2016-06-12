@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 20:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 23:51
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -768,13 +768,18 @@ File: figures/axis_globe.png Graphic file (type png)
 Package pdftex.def Info: figures/axis_globe.png used on input line 261.
 (pdftex.def)             Requested size: 197.53824pt x 188.70525pt.
  [13 <./figures/axis_globe.png>]
-Overfull \hbox (24.58328pt too wide) in paragraph at lines 272--273
+Overfull \hbox (24.58328pt too wide) in paragraph at lines 276--277
 \OT1/cmr/m/n/12 referin[]a glo-bal, prin urmarirea schimbarilor de \OT1/cmr/
 bx/n/12 c^amp mag-ne-tic \OT1/cmr/m/n/12 sau a \OT1/cmr/bx/n/12 orientarii\OT1
-/cmr/m/n/12 . 
+/cmr/m/n/12 .
  []
 
-[14] (inside_nav_tex.aux) ) 
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+
+ []
+
+[15] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
  14939 strings out of 493335
  285984 string characters out of 3126764
@@ -782,7 +787,7 @@ Here is how much of TeX's memory you used:
  18163 multiletter control sequences out of 15000+200000
  10853 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,56p,756b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,8n,56p,785b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
@@ -799,9 +804,9 @@ ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
 /Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb>
-Output written on inside_nav_tex.pdf (14 pages, 2137860 bytes).
+Output written on inside_nav_tex.pdf (15 pages, 2160711 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

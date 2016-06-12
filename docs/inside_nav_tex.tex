@@ -266,19 +266,27 @@ Acești senzori oferă posibilitatea monitorizării mișcării dispozitivului, d
 \subsubsection{Senzori de mediu}
 Acești senzori permit monitorizarea unor valori precum \textbf{umiditatea}, \textbf{intensitatea luminoasă}, \textbf{presiunea atmosferică} sau \textbf{temperatura mediului} din apropierea dispozitivului. Toți senzorii menționați sunt hardware.
 
-Senzorii de intensitate luminoasă, presiune și temperatură sunt unii dintre cei mai simplu de utilizat. Ei oferă valori cu următoarele unități de măsură: $lx$ (lux) pentru intensitatea luminoasă, $mbar$ (milibar) pentru presiunea atmosferică, respectiv $\celsius$ (grade Celsius) pentru temperatură.
+Senzorii de \textbf{intensitate luminoasă}, \textbf{presiune atmosferică} sau \textbf{temperatură} sunt unii dintre cei mai simplu de utilizat deoarece nu este necesar ca datele lor să fie corectate. Ei oferă valori cu următoarele unități de măsură: $lx$ (lux) pentru intensitatea luminoasă, $mbar$ (milibar) pentru presiunea atmosferică, respectiv $\celsius$ (grade Celsius) pentru temperatură.
+
+Senzorul de \textbf{umiditate} este și el simplu de folosit. Valorile oferite de el sunt procente.
+
+Comparativ cu senzorii de mișcare, senzorii de mediu oferă o singură valoare, chiar dacă aceasta este oferită printr-un vector (datorită modului de lucru al evenimentelor din Android: un eveniment transmite un vector de valori, chiar dacă doar o valoare din el este relevantă).
 
 \subsubsection{Senzori de poziție}
-Acești senzori permit monitorizarea poziției dispozitivului într-un cadru de referință global, prin urmărirea schimbărilor de \textbf{câmp magnetic} sau a \textbf{orientării}.
+Acești senzori permit monitorizarea poziției dispozitivului într-un cadru de referință global, prin urmărirea schimbărilor de \textbf{câmp magnetic} sau a \textbf{orientării}. Un alt senzor care face parte din această categorie este și  \textbf{senzorul de proximitate}.
 
+\textbf{Senzorul de câmp magnetic} arată fluctuațiile câmpului magnetic al Pământului pe cele trei axe. El oferă valori a căror unitate de măsură este $\mu$T (microTesla). În mod uzual datele de la acest senzor nu sunt folosite în forma lor brută, ci în combinație cu alte date. De exemplu, datele sale, împreună cu cele venite de la accelerometru, pot fi folosite pentru a obține matricile de rotație și de înclinație. Aceste matrici pot fi foloste pentru a se obține \textbf{azimutul}. Azimutul este unghiul la care suntem față de Polul Nord Magnetic. După declinarea magnetică acest unghi ajunge să arate diferența față de Polul Nord, acționând simialr unei busolă.
 
+\textbf{Senzorul de orientare} permite monitorizarea poziției relative a dispozitivului în raport cu sistemul de coordonate global. Acest senzor face fuziunea descrisă mai sus, combinând datele de la magnetometru și de la accelerometru pentru a obține \textbf{azimutul} (gradele de rotație în jurul axei $Z$), \textbf{pitch}-ul (gradele de rotație în jurul axei $X$) și \textbf{roll}-ul (gradele de rotație în jurul axei $Y$). Deoarece combinarea datelor de la ceilalți doi senzori consumă foarte mult, precizi senzorului este diminuată. De aceea, acest senzor a fost declarat depășit și Android recomandă utilizarea metodei prezentate mai sus pentru obținerea orientării (via matricile de rotație și înclinație).
+
+\textbf{Senzorul de proximitate} raportează cand telefonul este „aproape” sau „departe” de un alt obiect. În mod uzual distanța începând cu care un obiect este considerat apropiat/depărtat este de 5 $cm$.
 
 \subsubsection{Senzori de locație}
-Acești senori primesc date despre locația GPS curentă a dispozitivului.
+Acești senori primesc date despre locația curentă a dispozitivului. Locația curentă poate fi obținută din mai multe surse, cu erori mai mici sau mai mari. Printre surse numim: \textbf{GPS}-ul, \textbf{Wi-Fi}-ul sau chiar datele de \textbf{celulă telefonică}. Pe lângă erorile ce pot veni din faptul că avem de a face cu multiple surse, nici datele provenite din aceeași sursă nu sunt cele mai precise.
 
+Android oferă aplicațiilor acces la servicii de localizare în funcție de ce este disponibil pe dispozitiv. API-ul pentru locație este puțin diferit față de cel pentru ceilalți senzori.\\
 
-
-Deși acești senzori sunt recunoscuți de către Android, nu este obligatoriu ca toți să fie prezenți.
+Deși acești senzori sunt recunoscuți de către Android, nu este obligatoriu ca toți să fie prezenți și pe dispozitiv. Android nu impune ce senzori să fie prezenți pe dispozitive, ei doar recomandă prezența unora de bază pentru o utilizare cât mai apropiată de cea normală. Producătorii de dispozitive pot la fel de bine să mai adauge senzori noi, nici acest lucru nu este îngrădit de modul de lucru al Android. Fiind open-source, i se poate adăuga suport destul de ușor pentru senzori noi.
 
 
 
