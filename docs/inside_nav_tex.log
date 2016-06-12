@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 16:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 20:55
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -174,6 +174,10 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
+)
+("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\was\gensym
+b.sty"
+Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 ("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\todonotes\
 todonotes.sty"
@@ -553,18 +557,18 @@ Package newunicodechar Warning: This package won't work without loading
 ) (inside_nav_tex.aux)
 \openout1 = `inside_nav_tex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 ("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucsenc
 s.def"
@@ -636,7 +640,20 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) ABD: EveryShipout initializing macros
+)
+LaTeX Info: Redefining \celsius on input line 26.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 26.
+
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 26.
+Package gensymb Info: Using \Omega for \ohm on input line 26.
+
+Package gensymb Warning: Not defining \micro.
+
+ABD: EveryShipout initializing macros
 ("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-2.
 def"
 File: uni-2.def 2013/05/13 UCS: Unicode data U+0200..U+02FF
@@ -655,55 +672,136 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [1
 
 {C:/Users/Virgil Barcan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (30.2762pt too wide) in paragraph at lines 65--66
-[]\OT1/cmr/m/n/12 TODO: Ada-u-gare logo-uri An-droid: http://www.androidcentral
-.com/androids-
- []
+<figures/Android_SOONER_mobile_phone_platform_early_device.jpg, id=14, 780.516p
+t x 1040.688pt>
+File: figures/Android_SOONER_mobile_phone_platform_early_device.jpg Graphic fil
+e (type jpg)
 
-[2] [3] [4] [5]
-Overfull \hbox (8.96947pt too wide) in paragraph at lines 136--137
+<use figures/Android_SOONER_mobile_phone_platform_early_device.jpg>
+Package pdftex.def Info: figures/Android_SOONER_mobile_phone_platform_early_dev
+ice.jpg used on input line 51.
+(pdftex.def)             Requested size: 195.12852pt x 260.17136pt.
+ [2 <./figures/Android_SOONER_mobile_phone_platform_early_device.jpg>]
+<figures/Android_Robot_200.png, id=18, 328.5pt x 384.345pt>
+File: figures/Android_Robot_200.png Graphic file (type png)
+
+<use figures/Android_Robot_200.png>
+Package pdftex.def Info: figures/Android_Robot_200.png used on input line 72.
+(pdftex.def)             Requested size: 197.10152pt x 230.60876pt.
+ [3 <./figures/Android_Robot_200.png>]
+[4] [5] [6]
+Overfull \hbox (8.96947pt too wide) in paragraph at lines 140--141
 \OT1/cmr/m/n/12 Aceasta ver-siune ofe-rea o experien[]a uni-fi-cata smartpho
 ne-tableta, ea ^nlocuind
  []
 
-[6]
-Overfull \hbox (6.20297pt too wide) in paragraph at lines 157--158
+[7]
+Overfull \hbox (6.20297pt too wide) in paragraph at lines 160--161
 \OT1/cmr/m/n/12 Blu-e-to-oth Low Energy []i a OpenGL ES3.0, care adu-cea spo-ru
 ri de performan[]a
  []
 
-[7] [8]
+[8]
 Overfull \hbox (3.2862pt too wide) in paragraph at lines 189--190
 \OT1/cmr/m/n/12 Android Mar-sh-ma-l-low a in-tro-dus un nou sis-tem de per-mi-s
 iuni pen-tru aplica[]ii.
  []
 
-
+[9]
 Overfull \hbox (2.26408pt too wide) in paragraph at lines 191--192
 []\OT1/cmr/m/n/12 O alta com-po-nenta a sis-te-mu-lui unde cei de la Go-o-gle
  au adus ^mbunata[]iri
  []
 
-[9] [10] (inside_nav_tex.aux) ) 
+[10]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 214.
+
+
+("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscm
+r.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 214.
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+<figures/axis_device.png, id=46, 225.84375pt x 270.00874pt>
+File: figures/axis_device.png Graphic file (type png)
+
+<use figures/axis_device.png>
+Package pdftex.def Info: figures/axis_device.png used on input line 229.
+(pdftex.def)             Requested size: 180.67523pt x 216.00728pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+[11]
+Overfull \hbox (22.55081pt too wide) in paragraph at lines 238--239
+[]\OT1/cmr/bx/n/12 Accelerometrul \OT1/cmr/m/n/12 de-ter-mina accelera[]ia apl
+i-cata dis-po-zi-ti-vu-lui prin masurarea
+ []
+
+
+Overfull \hbox (2.7014pt too wide) in paragraph at lines 240--241
+[]\OT1/cmr/bx/n/12 Senzorul de gravita[]ie \OT1/cmr/m/n/12 ofera un vec-tor 3-
+dimensional care in-dica direc[]ia
+ []
+
+[12 <./figures/axis_device.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
+
+ []
+
+<figures/axis_globe.png, id=58, 246.9225pt x 235.88126pt>
+File: figures/axis_globe.png Graphic file (type png)
+
+<use figures/axis_globe.png>
+Package pdftex.def Info: figures/axis_globe.png used on input line 261.
+(pdftex.def)             Requested size: 197.53824pt x 188.70525pt.
+ [13 <./figures/axis_globe.png>]
+Overfull \hbox (24.58328pt too wide) in paragraph at lines 272--273
+\OT1/cmr/m/n/12 referin[]a glo-bal, prin urmarirea schimbarilor de \OT1/cmr/
+bx/n/12 c^amp mag-ne-tic \OT1/cmr/m/n/12 sau a \OT1/cmr/bx/n/12 orientarii\OT1
+/cmr/m/n/12 . 
+ []
+
+[14] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 14850 strings out of 493335
- 284184 string characters out of 3126764
- 320541 words of memory out of 3000000
- 18089 multiletter control sequences out of 15000+200000
- 10541 words of font info for 38 fonts, out of 3000000 for 9000
+ 14939 strings out of 493335
+ 285984 string characters out of 3126764
+ 322796 words of memory out of 3000000
+ 18163 multiletter control sequences out of 15000+200000
+ 10853 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,7n,56p,756b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Virgil Barcan/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Us
-ers/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-Output written on inside_nav_tex.pdf (10 pages, 109273 bytes).
+ 62i,8n,56p,756b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
+Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx6.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Virgil Barcan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
+s/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Virgil Barcan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb>
+Output written on inside_nav_tex.pdf (14 pages, 2137860 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
