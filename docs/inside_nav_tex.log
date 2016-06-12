@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  12 JUN 2016 23:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  13 JUN 2016 01:08
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -671,50 +671,72 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [1
 
-{C:/Users/Virgil Barcan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<figures/Android_SOONER_mobile_phone_platform_early_device.jpg, id=14, 780.516p
-t x 1040.688pt>
-File: figures/Android_SOONER_mobile_phone_platform_early_device.jpg Graphic fil
-e (type jpg)
-
-<use figures/Android_SOONER_mobile_phone_platform_early_device.jpg>
-Package pdftex.def Info: figures/Android_SOONER_mobile_phone_platform_early_dev
-ice.jpg used on input line 51.
-(pdftex.def)             Requested size: 195.12852pt x 260.17136pt.
- [2 <./figures/Android_SOONER_mobile_phone_platform_early_device.jpg>]
-<figures/Android_Robot_200.png, id=18, 328.5pt x 384.345pt>
+{C:/Users/Virgil Barcan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <fi
+gures/Android_Robot_200.png, id=14, 328.5pt x 384.345pt>
 File: figures/Android_Robot_200.png Graphic file (type png)
 
 <use figures/Android_Robot_200.png>
-Package pdftex.def Info: figures/Android_Robot_200.png used on input line 72.
-(pdftex.def)             Requested size: 197.10152pt x 230.60876pt.
- [3 <./figures/Android_Robot_200.png>]
-[4] [5] [6]
-Overfull \hbox (8.96947pt too wide) in paragraph at lines 140--141
+Package pdftex.def Info: figures/Android_Robot_200.png used on input line 62.
+(pdftex.def)             Requested size: 142.26378pt x 166.45564pt.
+ [2 <./figures/Android_Robot_200.png>]
+[3] [4]
+Overfull \hbox (8.96947pt too wide) in paragraph at lines 118--119
 \OT1/cmr/m/n/12 Aceasta ver-siune ofe-rea o experien[]a uni-fi-cata smartpho
 ne-tableta, ea ^nlocuind
  []
 
-[7]
-Overfull \hbox (6.20297pt too wide) in paragraph at lines 160--161
+[5]
+Overfull \hbox (6.20297pt too wide) in paragraph at lines 136--137
 \OT1/cmr/m/n/12 Blu-e-to-oth Low Energy []i a OpenGL ES3.0, care adu-cea spo-ru
 ri de performan[]a
  []
 
-[8]
-Overfull \hbox (3.2862pt too wide) in paragraph at lines 189--190
+[6]
+Overfull \hbox (3.2862pt too wide) in paragraph at lines 161--162
 \OT1/cmr/m/n/12 Android Mar-sh-ma-l-low a in-tro-dus un nou sis-tem de per-mi-s
 iuni pen-tru aplica[]ii.
  []
 
-[9]
-Overfull \hbox (2.26408pt too wide) in paragraph at lines 191--192
+
+Overfull \hbox (2.26408pt too wide) in paragraph at lines 163--164
 []\OT1/cmr/m/n/12 O alta com-po-nenta a sis-te-mu-lui unde cei de la Go-o-gle
  au adus ^mbunata[]iri
  []
 
-[10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 214.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+<figures/axis_device.png, id=36, 225.84375pt x 270.00874pt>
+File: figures/axis_device.png Graphic file (type png)
+
+<use figures/axis_device.png>
+Package pdftex.def Info: figures/axis_device.png used on input line 194.
+(pdftex.def)             Requested size: 142.26378pt x 170.09404pt.
+ [8]
+Overfull \hbox (22.55081pt too wide) in paragraph at lines 202--203
+[]\OT1/cmr/bx/n/12 Accelerometrul \OT1/cmr/m/n/12 de-ter-mina accelera[]ia apl
+i-cata dis-po-zi-ti-vu-lui prin masurarea
+ []
+
+
+Overfull \hbox (2.7014pt too wide) in paragraph at lines 204--205
+[]\OT1/cmr/bx/n/12 Senzorul de gravita[]ie \OT1/cmr/m/n/12 ofera un vec-tor 3-
+dimensional care in-dica direc[]ia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 218.
 
 
 ("C:\Users\Virgil Barcan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscm
@@ -722,72 +744,35 @@ r.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 214.
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
-
- []
-
-<figures/axis_device.png, id=46, 225.84375pt x 270.00874pt>
-File: figures/axis_device.png Graphic file (type png)
-
-<use figures/axis_device.png>
-Package pdftex.def Info: figures/axis_device.png used on input line 229.
-(pdftex.def)             Requested size: 180.67523pt x 216.00728pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-
- []
-
-[11]
-Overfull \hbox (22.55081pt too wide) in paragraph at lines 238--239
-[]\OT1/cmr/bx/n/12 Accelerometrul \OT1/cmr/m/n/12 de-ter-mina accelera[]ia apl
-i-cata dis-po-zi-ti-vu-lui prin masurarea
- []
-
-
-Overfull \hbox (2.7014pt too wide) in paragraph at lines 240--241
-[]\OT1/cmr/bx/n/12 Senzorul de gravita[]ie \OT1/cmr/m/n/12 ofera un vec-tor 3-
-dimensional care in-dica direc[]ia
- []
-
-[12 <./figures/axis_device.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
-
- []
-
-<figures/axis_globe.png, id=58, 246.9225pt x 235.88126pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 218.
+ [9 <./figures/axis_device.png>]
+<figures/axis_globe.png, id=48, 246.9225pt x 235.88126pt>
 File: figures/axis_globe.png Graphic file (type png)
 
 <use figures/axis_globe.png>
-Package pdftex.def Info: figures/axis_globe.png used on input line 261.
-(pdftex.def)             Requested size: 197.53824pt x 188.70525pt.
- [13 <./figures/axis_globe.png>]
-Overfull \hbox (24.58328pt too wide) in paragraph at lines 276--277
+Package pdftex.def Info: figures/axis_globe.png used on input line 225.
+(pdftex.def)             Requested size: 142.26378pt x 135.9006pt.
+
+Overfull \hbox (24.58328pt too wide) in paragraph at lines 238--239
 \OT1/cmr/m/n/12 referin[]a glo-bal, prin urmarirea schimbarilor de \OT1/cmr/
 bx/n/12 c^amp mag-ne-tic \OT1/cmr/m/n/12 sau a \OT1/cmr/bx/n/12 orientarii\OT1
 /cmr/m/n/12 .
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+[10 <./figures/axis_globe.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
-[15] (inside_nav_tex.aux) ) 
+[11] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 14939 strings out of 493335
- 285984 string characters out of 3126764
- 322796 words of memory out of 3000000
- 18163 multiletter control sequences out of 15000+200000
+ 14933 strings out of 493335
+ 285664 string characters out of 3126764
+ 320795 words of memory out of 3000000
+ 18159 multiletter control sequences out of 15000+200000
  10853 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,8n,56p,785b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,8n,56p,786b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
@@ -800,13 +785,12 @@ s/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Virgil Barcan/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
-/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb>
-Output written on inside_nav_tex.pdf (15 pages, 2160711 bytes).
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb>
+Output written on inside_nav_tex.pdf (11 pages, 201069 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
