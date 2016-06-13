@@ -236,6 +236,81 @@ Android oferă aplicațiilor acces la servicii de localizare în funcție de ce 
 Deși acești senzori sunt recunoscuți de către Android, nu este obligatoriu ca toți să fie prezenți și pe dispozitiv. Android nu impune ce senzori să fie prezenți pe dispozitive, ei doar recomandă prezența unora de bază pentru o utilizare cât mai apropiată de cea normală. Producătorii de dispozitive pot la fel de bine să mai adauge senzori noi, nici acest lucru nu este îngrădit de modul de lucru al Android. Fiind open-source, i se poate adăuga suport destul de ușor pentru senzori noi.
 
 
+\section{Obiecte Android}
+Sistemul de operare Android oferă o platformă bogată pentru a permite dezvoltarea de aplicații. Aplicațiile Android sunt scrise în Java. Pe lângă \textbf{Java}, se poate utiliza și \textbf{C++}, prin includerea \textbf{NDK} (Native Development Kit).
+
+Modul în care aplicațiile Android sunt structurate diferă comparativ cu modul „uzual” (al aplicațiilor desktop). Aplicațiile sunt alcătuite din mai multe componente: \textbf{activități}, \textbf{servicii}, \textbf{content provider}, \textbf{broadcast receiver}, fiecare dintre ele putând fi invocată în orice moment. Astfel aplicațiile pot avea mai multe puncte de intrare, câte unul pentru fiecare activitate componentă.
+
+Comunicarea între aceste componente se face folosind alte obiecte specifice Android, \textbf{intent}-urile. Un intent este modul prin care o componentă „spune” ce dorește să facă: să pornească o altă componentă, să ceară deschiderea aplicației standard pentru a afișa conținut, să transmită parametri și nu numai.
+
+O altă componentă esențială a unei aplicații Android este \textbf{manifestul}. Acest fișier XML este folosit pentru a descrie ce componentă trebuie pornită prima dată, care sunt componentele aplicației, ce permisiuni cere aplicația, care este API-ul minim suportat de aplicație, descrie funcționalități hardware sau software pe care aplicația le folosește (acces la Bluetooth, la cameră, etc.)
+
+Pentru stocarea de date Android oferă posibilitatea folosirii unor obiecte de sistem numite \textbf{SharedPreferences}. Acestea stochează datele într-un format XML, similar unui dicționar dintr-un limbaj de programare, în modul cheie-valoare. Pe lângă SharedPreferences se mai pot utiliza și bazele de date SQLite sau fișiere pe stocarea dispozitivului.
+
+Înainte de a continua cu explicarea fiecărei componente, vom descrie succint cum se construiește și cum se rulează o aplicație. Pentru a construi o aplicație, Android pune la dispoziție unelte prin \textbf{SDK} (Software Development Kit). Aplicațiile sunt construite într-un \textbf{pachet Android} a cărei extensie este .apk. Un .apk conține tot ce este necesar aplicației pentru a rula. Fiecare aplicație rulează în izolare, în propria sa mașină virtuală. Fiecare aplicație rulează ca un proces Linux. Android pornește acest proces atunci când se cere deschiderea aplicației și îl închide atunci când fie utilizatorul închide aplicația, fie sistemul are nevoie de resursele consumate de aplicație și aceasta nu este folosită.
+
+\subsection{Componentele unei aplicații}
+Așa cum am amintit deja, există patru tipuri de componente: \textbf{activități}, \textbf{servicii}, \textbf{content provider}, \textbf{broadcast receiver}.
+
+\subsubsection{Activități}
+O activitate este o componentă a unei aplicații care oferă un ecran prin care utilizatorul să interacționeze cu ea. Fiecare activitate primește o fereastră pe care să deseneze elementele sale grafice.
+
+Pentru a crea o activitate este necesar să fie creată o clasă care să extindă clasa de bază Activity. Prin aceasta ni se va cere să implementăm metoda onCreate(). Această metodă este entry-point-ul în activitate, similar unui main().
+
+Pentru a trata diferite situații posibile în ciclul de viață al activității este necesar să implementăm metode de tip callback prin care Android să ne notifice. Astfel putem primi notificare când suntem opriți, cand am fost readuși în focus, etc. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{figures/activity_lifecycle.png}
+\caption{Ciclul de viață al unei activități}
+\end{figure}
+
+Fiind componente prin care utilizatorul poate interacționa cu aplicația, o activitate trebuie să ofere un layout în care să își declare componentele grafice. Acest lucru se face prin scrierea unui XML în care să fie descrisă structura elementelor. Există mai multe modalități de așezare a elementelor grafice pe ecran, iar acestea poartă numele de layout-uri. Amintim: LinearLayout, RelativeLayout, GridLayout, CardLayout, dintre cele mai folosite. Pe lângă layout, este necesar să adăugăm și componente precum butoane sau input-uri. Android are o paletă largă de astfel de elemente, iar unde biblioteca standard nu are elemente se poate interveni fie cu cod propriu, fie cu biblioteci externe.
+
+Dacă se dorește un mod de afișare mai dinamic, se pot adăuga \textbf{Fragmente}.
+
+Un \textbf{Fragment} reprezintă o componentă modulară a unei activități. O activitate poate conține mai multe fragmente care să interacționeze între ele. Este ca și cum am construi o aplicație desktop cu mai multe ferestre disponibile, doar că aici nu avem ferestre efective, ci zone din activitate. Activitatea descrie în layout unde trebuie așezat fiecare fragment iar apoi poate modifica din cod așezarea acestora pentru a crea un comportament dinamic. Putem avea pe o aceeași activitate două ecrane și să ajungem de la unul la celalalt printr-un swipe.
+
+Marele avantaj al fragmentelor este acela că oferă funcționalități similare din punctul de vedere al utilizatorului cu o activitate, însă totul în interiorul unei activități, ceea ce scutește sistemul de la un efort suplimentar. Interfețele devin mai rapide și mai fluide, pe lângă marele avantaj al oferirii unei experiențe mai plăcute pentru utilizator.
+
+\subsubsection{Servicii}
+Serviciile sunt componente ale aplicației care pot efectua operații în fundal (nu au o parte care să interacționeze cu utilizatorul, așa cum au activitățile). Serviciile sunt utile pentru operații de genul citire fișiere mari, interacțiune cu senzori, interacțiune cu rețeaua.
+
+Un serviciu poate lua două forme: \textbf{pornit} sau \textbf{„lipit”}. Un serviciu pornit poate rula în fundal pentru o perioadă nedeterminată de timp, chiar dacă acea componentă care l-a pornit a fost distrusă. Serviciul se va opri singur atunci când își finalizează treaba. Un serviciu „lipit” este acel serviciu care oferă o interacțiune de tip client-server cu acea componentă care l-a pornit. Dacă oprim componenta care a pornit serviciul, se oprește și serviciul.
+
+Pentru a crea un serviciu este necesar să fie creată o clasă care să extindă clasa Service. La fel ca în cazul activităților, Android ne va anunța prin callback-uri când se întâmplă evenimente relevante.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{figures/service_lifecycle.png}
+\caption{Ciclul de viață al unui serviciu}
+\end{figure}
+
+\subsubsection{Content Provider}
+Un content provider este o componentă care oferă acces la un set de date structurate, cum ar fi, de exemplu, contactele. Aceste componente încapsulează datele și oferă mecanisme pentru a defini chestiuni de securitate. Utilizarea lor este atunci când se dorește să se ofere acces la datele oferite de un proces unui alt proces.
+Modul de lucru cu această componentă este similar într-o oarecare măsură cu lucrul cu o bază de date. Pentru a primi date se fac interogări, iar pentru a parcurge datele folosim un cursor.
+
+\subsubsection{Broadcast Receiver}
+Un broadcast receiver este o componentă care permite captarea și procesarea unor mesaje trimise de tip broadcast, trimise către oricine le poate înțelege și procesa.
+
+Această componentă este declarată în AndroidManifest, acolo unde se specifică și ce mesaje poate să înțeleagă. Utilitatea lor este, de exemplu, de a „asculta” când s-a repornit telefonul, eventual pentru a porni alte aplicații și servicii.
+
+
+\subsection{API-uri Google}
+Pe lângă paleta largă de obiecte pe care o pune la dispoziție prin sistemul Android, Google mai oferă și acces la servicii suplimentare care pot aduce mari îmbunătățiri aplicațiilor. Sunt servicii care scutesc dezvoltatorii de scris și testat cod, oferindu-le metode de a afișa hărți, de a introduce componente sociale în aplicații, de a construi jocuri noi, de a face procesări în cloud și nu numai.
+
+\subsubsection{Google Maps API}
+API-ul Google Maps oferă dezvoltatorilor posibilitatea adăugării de hărți în aplicațiile lor. Aceste hărți pot conține toate funcționalitățile pe care le găsim în aplicația Google Maps, printre care și clădiri 3D, hărți ale clădirilor, imagini din satelit.
+
+API-ul se ocupă în mod automat de tot ce înseamnă comunicarea cu serverele Google și cu afișarea hărții. Dezvoltatorul trebuie doar să implementeze funcționalitățile dorite peste cele de bază oferite deja de Google Maps. Dezvoltatorul poate, spre exemplu, să adauge propriul design harților, să modifice unghiul de vizualizare, să adauge linii, puncte sau alte elemente grafice pe diferite nivele (layers).
+
+
+
+
+
+
+
+
 
 
 
