@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  14 JUN 2016 00:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  14 JUN 2016 00:41
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -775,32 +775,39 @@ Overfull \hbox (9.70927pt too wide) in paragraph at lines 290--292
 -po-nente ^ncapsuleaza
  []
 
-[14 <./figures/service_lifecycle.png>] [15] (inside_nav_tex.aux) ) 
+[14 <./figures/service_lifecycle.png>] [15]
+Overfull \hbox (0.72383pt too wide) in paragraph at lines 314--315
+[]\OT1/cmr/m/n/12 Aceste aplica[]ii fie ^ncearca ^mbunata[]irea sem-na-lu-
+lui GPS prin adaugarea
+ []
+
+[16] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 14937 strings out of 493335
- 285803 string characters out of 3126764
+ 14942 strings out of 493335
+ 285878 string characters out of 3126764
  320794 words of memory out of 3000000
- 18162 multiletter control sequences out of 15000+200000
- 10555 words of font info for 38 fonts, out of 3000000 for 9000
+ 18166 multiletter control sequences out of 15000+200000
+ 11702 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,56p,807b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Vir
-gil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmbx6.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/Virgil Barcan/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/
+<C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
 Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
-Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb>
-Output written on inside_nav_tex.pdf (15 pages, 263181 bytes).
+cmbx6.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx7.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Virgil Barcan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
+s/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Virgil Barcan/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb>
+Output written on inside_nav_tex.pdf (16 pages, 272522 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
