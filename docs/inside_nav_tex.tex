@@ -8,6 +8,7 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{combelow}
 \usepackage{newunicodechar}
+\usepackage{url}
 
 \newunicodechar{Ș}{\cb{S}}
 \newunicodechar{ș}{\cb{s}}
@@ -308,14 +309,70 @@ API-ul se ocupă în mod automat de tot ce înseamnă comunicarea cu serverele G
 
 
 
-\section{Aplicații similare existente}
+\section{Aplicații și cercetări similare existente}
+TODO: Adauga ceva introducere 
+
+
+\subsection{Aplicații similare existente}
 În încercarea de a oferi sisteme de navigație rezistene la erori sau la lipsa semnalului s-au construit mai multe aplicații similare cu cea din această lucrare.
 
 Aceste aplicații fie încearcă îmbunătățirea semnalului GPS prin adăugarea măsurătorilor de la senzori, fie încearcă să ofere posibilitatea navigării exclusiv folosind senzorii, fie ei senzorii descriși în unul din capitolele anterioare, fie ei camera telefonului sau chiar Wi-Fi-ul.
 
-Am putea considera aplicații similare și acele aplicații care încearcă oferirea de noi informații utilizatorilor folosind date de la GPS și senzori, de exemplu pentru a găsi poziția și respectiv orientarea lor în raport cu eventuale puncte de interes. %Aplicația Landscape%
+Am putea considera aplicații similare și acele aplicații care încearcă oferirea de noi informații utilizatorilor folosind date de la GPS și senzori, de exemplu pentru a găsi poziția și respectiv orientarea lor în raport cu eventuale puncte de interes.
+
+\begin{itemize}  
+\item \textbf{Google Maps} \cite{GoogleMaps}: 
+Dacă discutăm despre aplicații despre navigație pentru pietoni, nu putem omite poate cea mai cunoscută dintre ele, Google Maps. Această aplicație este oferită de către Google și oferă funcționalități de bază, cum ar fi afișarea locației curente, oferirea de indicații către alte locații, dar și afișarea de informații legate de mijloacele de transport în comun sau starea traficului. Este o aplicație care arată cât de multe date are Google la dispoziție. 
+
+Marele dezavantaj al acestei aplicații este acela că are nevoie de acces la semnal GPS și la serviciul de date pentru descărcarea hărților (se oferă acum posibilitatea descărcării hărților pentru ca aplicația să funcționeze și offline).
+ 
+Google Maps este inutil în zonele cu semnal GPS slab sau în interiorul clădirilor. Nu îl putem folosi, de exemplu, pentru a găsi o sală de curs într-o facultate, un cabinet într-un spital sau un magazin într-un mall. 
+ 
+\item \textbf{Strava} \cite{Strava}:
+O altă aplicație care oferă navigație pentru pietoni, și nu numai, este Strava. Această aplicație a fost construită ca un asistent de fitnes folosit pentru a înregistra traseele celor cărora le place să facă sport, însă componenta sa socială permite salvarea de trasee și oferirea/parcurgerea lor.
+
+Deoarece este în principal o aplicație de fitness, Strava nu pune mare accent pe parte de navigație. Nu găsim în Strava informațiile pe care le găsim în Google Maps. Pe lângă acest dezavantaj, și Strava suferă de aceeași problemă a dependenței de GPS. Fără GPS aplicația doar măsoară numărul de pași și estimeasă distanța parcursă.
+
+\item \textbf{SmartNavi - Step Navigation} \cite{SmartNavi}:
+O aplicație care se apropie de ceea ce se dorește a fi această lucrare este SmartNavi - Step Navigation. Această aplicație a fost creată în cadrul unui set de experimente pentru platforma Android, prin care Google a oferit posibilitatea unor dezvoltatori să își pună ideile în practică, aceștia beneficiind de marketingul făcut de compania gigant. Prin participarea la aceste experimente, dezvoltatorii sunt de acord să facă public codul sursă pentru a putea fi folosit și de către alți dezvoltatori care să ducă mai departe ideile și să lanseze aplicații noi.
+
+Aplicația oferă posibilitatea de a oferi navigație fără a avea semnal GPS, doar pe baza măsurării numărului de pași și a direcției luate de utilizator. Aceste este un mare avantaj dacă o comparăm cu aplicații precum Google Maps sau Strava. Aplicația recunoaște pașii și direcția bazându-se pe senzorii dispozitivului. 
+
+Pe lângă oferirea de navigație, aplicația poate să se comporte ca un furnizor de locație, care poate fi util pentru alte aplicații din sistem. 
+
+Dezavantajul acestei aplicații este că utilizatorul trebuie să țină mereu telefonul în fața lui (deși poziția este una normală pentru situația în care trebuie să urmărească indicațiile de pe ecran, pot exista situații în care utilizatorul să dorească să țină telefonul în altă poziție).
+
+SmartNavi dorește să ofere posibilitatea de a avea navigație fără un consum foarte mare de baterie, dorința lor nu este neapărat de a oferi un sistem capabil de a lucra în interiorul clădirilor. Acesta poate fi privit ca un dezavantaj, aplicația nu are o țintă clară, ea doar dorește să arate ce este posibil pe această platformă.
+
+\item \textbf{DaRe - Pedestrian Navigation} \cite{DaRe}:
+Aplicația DaRe oferă navigație primind date de la un senzor montat pe piciorul purtătorului, care comunică prin Bluetooth cu smartphone-ul. DaRe are două moduri de lucru: metoda grafică, în care afișează traseul pe un plan bi-dimensional, și modul text, în care afișează date cum ar fi: numărul de pași, distanța parcursă și viteza medie. 
+
+Totuși, comparativ cu aplicația descrisă în această lucrare, DaRe are marele avantaj de a avea un senzor extern plasat exact pe piciorul purtătorului. Asta garantează că pașii vor fi detectați aproape perfect, comparativ cu detecția făcută cu ajutorul telefonului. Măsuratorile făcute cu telefonul sunt predispuse la mișcările utilizatorului, care pot să declanșeze detectorul de pași și să numere în plus.
+
+Un alt dezavantaj al DaRe este acela că nu plasează utilizatorul pe o hartă, ci doar îl arată într-un plan bidimensional simplu. Aplicația nu are decât scop de testare al posibilităților unui astfel de sistem.
+
+\item \textbf{Landmarker} \cite{Landmarker}:
+O altă aplicație care se bazează foarte mult pe senzori și pe locație pentru a oferi utilizatorului informații este Landmarker. Această aplicație dorește să aducă pe platforma Android un mod nou de a găsi puncte de interes în orașe. 
+
+Aplicația recunoaște poziția curentă a utilizatorului și, folosind senzorii dispozitivului, reacționează la mișcările acestuia, arătându-i pe ecran unde (distanța și punctul cardinal) se află locațiile de interes.
+
+Landmarker intră într-o altă zonă față de toate celelalte aplicații, aceea a oferirii de informații legate de puncte de interes din apropiere. Nu se ocupă de oferirea de navigație (ba chiar oferă posibilitatea să se treacă la Google Maps dacă se dorește a se găsi un traseu până la punctul de interes) și este dependentă de GPS. Este interesantă în contextul lucrării curente deoarece folosește senzorii telefonului pentru a determina orientarea față de un punct cardinal, ceea ce este esențial pentru oferirea de navigație în clădiri sau zone cu semnal GPS slab.
+
+\end{itemize}
 
 
+\subsection{Cercetări similare existente}
+Dacă este să analizăm munca de cercetare făcută, a cărei rezultat nu a fost o aplicație publicată, trebuie să luăm în considerare câteva articole care explică diferite metode de a obține ce se dorește și prin această lucrare.
 
+Amintesc aici câteva din sursele de inspirație:
+ 
+\begin{itemize}  
+\item \textbf{TODO} \cite{GoogleMaps}: 
+\end{itemize}
+
+\newpage
+\bibliography{inside_nav_bib}
+\bibliographystyle{unsrt}
+\nocite{*}
 
 \end{document}
