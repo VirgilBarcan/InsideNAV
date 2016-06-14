@@ -1,0 +1,17 @@
+1. Map activity: show current position
+2. Text activity: show more info
+3. Calibration activity: calibrate the application
+
+Need:
+a. SharedPreferences:
+	- constants: minimum time between 2 steps, minimum amplitude difference between peak-valley, valley-peak
+	- user height
+	- user k constant
+	- user averages: peak, valley, step distance
+
+b. GoogleMaps API key
+
+TODO:
+- Remember last good GPS position
+- Calculate at each step the new position (latitude, longitude)
+- Show on map the new position
