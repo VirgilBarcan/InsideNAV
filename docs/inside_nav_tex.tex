@@ -27,6 +27,8 @@
 \begin{document}
 \maketitle
 
+\tableofcontents
+
 \newpage
 \section{Sistemul de operare Android}
 \subsection{Despre Android \cite{AndroidHistoryAndroidCentral}} 
@@ -429,8 +431,47 @@ Aceast serviciu oferă componenta lipsă a oricărei aplicații de navigație î
 \end{itemize}
 
 \newpage
-\section{Parte personală}
-TODO: 
+\section{Motivație}
+Problema pe care încerc să o rezolv prin această lucrare de licență este să ofer un sistem robust de navigație, indiferent de mediul în care telefonul este folosit.
+
+La momentul actual Android este cel mai utilizat sistem de operare pentru dispozitive mobile, iar acest fapt poate avea un impact major asupra utilizatorilor, în sensul oferirii de soluții pentru probleme dintre cele mai vaste.
+
+Utilitatea unei aplicații de navigație rezistentă la probleme de mediu (de genul semnal GPS slab) este clar în mai multe zone, cum ar fi: găsirea de magazine în mall-uri, de cabinete în spitale, de cărți în biblioteci sau chiar de săli de curs în facultăți. 
+
+Probabil nu există persoane care să nu se fi pierdut într-un mediu urban. În momentul în care suntem în clădire nu putem să ne mai bazăm pe ajutorul dispozitivului care de obicei ne-ar fi ajutat, telefonul. Acesta este limitat din punct de vedere hardware la un mediu „propice”. În sensul aplicației prezente, mediu „propice” este acel mediu în care senzorul GPS este capabil să se fixeze la suficienți sateliți pentru a putea calcula o poziție cât mai precisă.
+
+Evoluția telefoanelor înspre dispozitive încărcate de senzori este de un mare ajutor în situația dată, asta deoarece există metode prin care poziția poate fi estimată. Aceste metode își au începuturile în aviație, unde avioanele au nevoie să știe exact unde se află relativ la anumite puncte. 
+
+Aviația nu este singura industrie care a investit enorm în astfel de metode, ci și cea auto. Acolo se dorește ca mașina să fie capabilă să își calculeze poziția curentă chiar și în condițiile în care GPS-ul nu este disponibil, cum ar fi într-un tunel, într-un canion urban sau pur și simplu într-o pădure sau la munte.
+
+Inspirația pentru această aplicație a venit din două surse, una o problemă, iar cealaltă chiar soluția. Problema cu care mă confrunt este că îmi este greu să mă orientez în clădiri mare, cum ar fi Palas (îndeosebi parcarea de la Palas). Soluția a venit din zona în care lucrez, adică industria automotive. De acolo am aflat că există metode prin care automobilele pot să își estimeze poziția curentă bazându-se pe mai mulți senzori, printre care accelerometrul și giroscopul. 
+
+În cazul automobilelor estimarea distanței parcurse este extrem de simplă și de precisă, se numără de câte ori se învarte fiecare roată. Desigur, implementarea unui sistem similar „\textbf{dead reckoning}-ului” din industria automotive în zona „\textbf{pedestrian}” sau „\textbf{personal}” aduce cu sine un set de noi probleme. Însă aceste probleme sunt unele de natură tehnică, la care putem găsi soluții care să rezolve, prin aplicația rezultată, problema primordială, aceea a locației în clădiri.
+
+În continuare voi prezenta de ce localizarea este o problemă dificilă și cum s-a încercat rezolvarea ei.
+
+Localizarea se face în zilele noastre cu ajutorul sistemului global de navigație, numit \textbf{GNSS} (Global Navigation Satellite System). Aceste este, așa cum lasă și numele său să se înțeleagă, acesta este un sistem de sateliți aflați în spațiu care transmit date către module capabile să le înțeleagă, aflate aici, pe Pământ.
+
+Construirea acestui sistem a început în anii '60, prin lansarea de către \textit{Departament of Defence} a a primilor sateliți, cu scopul de a cunoaște locația submarinelor care transportau focoase nucleare. În anii '70
+armata americană voia un sistem de sateliți care să ofere navigație robustă. Folosindu-se de „efectul \textbf{Doppler}”, receptorul datelor putea să calculeze distanța la care se afla de emițător. Combinând datele de la mai mulți emițători, receptorul putea să estimeze poziția sa curentă. Așa cum putem observa în Figura \ref{fig:gps_signals}, preluată din articolul NASA referitor la istoria GPS \cite{GPSHistoryNASA}, locația curentă se estimează într-o zonă foarte probabilă în care se află receptorul. Această zonă nu este însă un punct, ci un volum. Asta înseamnă că oricâți sateliți am avea vizibili, poziția noastră calculată este doar o estimare, deci supusă erorilor.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{figures/gps_signals.png}
+\caption{Semanlele radio GPS}
+\label{fig:gps_signals}
+\end{figure}
+
+Pentru calculul locației curente se pleacă de la un fapt cunoscut, acela că receptorul se află fie pe suprafața Pământului, fie la o distanță mică de acesta (fie în aer sau în ocean).
+
+Cunoscând acest fapt, estimarea locației la nivel de \textbf{latitudine} și \textbf{longitudine} se face cu doar \textbf{trei sateliți}. Sunt necesari trei sateliți pentru că unul din sateliți va juca rolul de satelit care oferă timpul de referință, iar ceilalți doi vor fi folosiți pentru a estima două sfere de probabilitate de apariție. Intersecția acelor două sfere va fi, în condițiile date, un punct sau maxim două puncte. Unul dintre acele puncte se va afla pe Pământ și celălalt în spațiu sau mult în interiorul Pământului (către centrul său). Receptorul GPS va ști să aleagă punctul aflat pe Pământ.\\
+
+TODO: Modificare width imagine
+
+TODO: Imagini cum se face 2D Fix (cu sferele)
+
+TODO: Explicatii despre 3D Fix
+
 
 \newpage
 \bibliography{inside_nav_bib}

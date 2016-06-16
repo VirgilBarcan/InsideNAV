@@ -125,4 +125,11 @@ MapsPeople A/S.
 \newblock {Maps People}.
 \newblock \url{http://mapspeople.com/}, 2016.
 
+\bibitem{GPSHistoryNASA}
+NASA.
+\newblock {Global Positioning System History}.
+\newblock
+  \url{http://www.nasa.gov/directorates/heo/scan/communications/policy/GPS_History.html/},
+  2016.
+
 \end{thebibliography}
