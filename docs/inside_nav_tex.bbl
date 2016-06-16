@@ -1,4 +1,91 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{AndroidHistoryAndroidCentral}
+Android Central.
+\newblock {Android History}.
+\newblock \url{http://www.androidcentral.com/android-history/}, 2016.
+
+\bibitem{AndroidVersionsHistory}
+Tom's Guide.
+\newblock {Android Version History: A Timeline of New Features}.
+\newblock
+  \url{http://www.tomsguide.com/us/android-version-history,news-21211.html},
+  2015.
+
+\bibitem{AndroidHistory}
+Inc. Google.
+\newblock {Android History}.
+\newblock \url{https://www.android.com/history/}, 2016.
+
+\bibitem{DeveloperAndroid}
+Inc. Google.
+\newblock {Android Developer}.
+\newblock \url{https://developer.android.com/}, 2016.
+
+\bibitem{GoogleMapsAndroidAPI}
+Inc. Google.
+\newblock {Maps Android API}.
+\newblock \url{https://developers.google.com/maps/documentation/android-api/},
+  2016.
+
+\bibitem{ZhangYu}
+Zhang Yu.
+\newblock Dead reckoning algorithms for indoor localization.
+\newblock Master's thesis, Departament of Electrical and Computer Engineering,
+  National University of Singapore, 2012.
+
+\bibitem{StepLengthAndHeadingDetermination}
+Jeong~Won Kim, Han~Jin Jang, Donh-Hwan Hwang, and Chansik Park.
+\newblock A step, stride and heading determination for the pedestrian
+  navigation system.
+\newblock {\em Journal of Global Positioning Systems}, 2004.
+
+\bibitem{HarveyWeinberg}
+Harvey Weinberg.
+\newblock Using the adxl202 in pedometer and personal navigation applications.
+\newblock Technical report, Analog Devices Inc., 2002.
+
+\bibitem{StepLengthEstimatorsComparaison}
+Diego Alvarez, Rafael Gonzalez, Antonio Lopez, and Juan~Carols Alvarez.
+\newblock Comparison of step length estimators from weareable accelerometer
+  devices.
+\newblock In {\em Engineering in Medicine and Biology Society, 2006. EMBS '06.
+  28th Annual International Conference of the IEEE}, pages 5964--5967, Aug
+  2006.
+
+\bibitem{AbhijitChandgadkar}
+Abhijit Chandgadkar.
+\newblock An indoor navigation system for smartphones.
+\newblock Department of Computer Science - Imperial College London.
+
+\bibitem{QRNavigation}
+Vinjohn Chirakkal, Myungchul Park, and Dong~Seog Han.
+\newblock Exploring smartphone-based indoor navigation: A qr code
+  assistance-based approach.
+\newblock {\em IEIE Transactions on Smart Processing and Computing}, 2015.
+
+\bibitem{SuratKwanmuang}
+Surat Kwanmuang.
+\newblock {\em Filtering and Tracking for a Pedestrian Dead-Reckoning System}.
+\newblock PhD thesis, The University of Michigan, 2015.
+
+\bibitem{SDCPA10b}
+Alberto Serra, Tiziana Dessi, Davide Carboni, Vlad Popescu, and Luigi Atzori.
+\newblock Inertial navigation systems for user-centric indoor applications.
+\newblock In {\em Networked and Electronic Media Summit, Barcelona, 2010},
+  2010.
+
+\bibitem{SCM10}
+Alberto Serra, Davide Carboni, and Valentina Marotto.
+\newblock Indoor pedestrian navigation system using a modern smartphone.
+\newblock In {\em Proceedings of the 12th international conference on Human
+  computer interaction with mobile devices and services}, pages 397--398. ACM,
+  ACM Press, 2010.
+
+\bibitem{OliverWoodman}
+Oliver Woodman.
+\newblock {\em Pedestrian localisation for indoor environments}.
+\newblock PhD thesis, St Catharine’s College - University of Cambridge, 2010.
 
 \bibitem{GoogleMaps}
 Inc. Google.
@@ -32,5 +119,10 @@ Creative Labs~@ Google.
 \newblock
   \url{https://play.google.com/store/apps/details?id=com.androidexperiments.landmarker/},
   2015.
+
+\bibitem{MapsPeople}
+MapsPeople A/S.
+\newblock {Maps People}.
+\newblock \url{http://mapspeople.com/}, 2016.
 
 \end{thebibliography}

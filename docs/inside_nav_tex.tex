@@ -27,9 +27,9 @@
 \begin{document}
 \maketitle
 
-
+\newpage
 \section{Sistemul de operare Android}
-\subsection{Despre Android}
+\subsection{Despre Android \cite{AndroidHistoryAndroidCentral}} 
 Android este un sistem de operare dedicat dispozitivelor mobile, smartphone-uri, smartwatch-uri, precum și TV-urilor sau chiar dispozitive din interiorul automobilelor.
 
 Sistemul de operare Android este bazat pe un kernel de Linux și a fost construit pentru a fi folosit în principal pe dispozitive touchscreen. Este cel mai folosit sistem de operare disponibil pe dispozitive mobile încă din 2013.
@@ -45,7 +45,7 @@ Primul smartphone cu sistem de operare Android lansat a fost HTC Dream, în luna
 Fiecare nouă versiune a sistemului este denumită în ordine alfabetică după un desert: „Cupcake”, „Donut”, „Eclair”, „Froyo”, „Gingerbread”, „Honeycomb”, „Ice Cream Sandwich”, „Jellybean”, „Kit Kat”, „Lolipop” și „Marshmallow”. Următoarea versiune este plănuită pentru acest an, deocamdată ea fiind denumită Android N. Google a oferit utilizatorilor posibilitatea să voteze numele.
 
 
-\subsection{Versiunile Android}
+\subsection{Versiunile Android \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}
 \subsubsection{Android 1.0}
 Prima versiune a sistemului de operare Android, denumită, deloc pompos, Android 1.0, dădea impresia de produs nefinalizat, însă lăsa să se întrevadă planurile Google pentru această platformă. Această versiune deja avea părți care, comparate cu ce era  pe piață la momentul acela, erau mult superioare. Sunt lucruri pe care acum le trecem cu vederea, dar care atunci erau noutăți, widget-urile, zonele de notificări și nu numai. 
 
@@ -166,19 +166,20 @@ Majoritatea dispozitivelor care rulează Android au încorporați diverși senzo
 
 	Deși poate nu este evident, impactul senzorilor este major. Faptul că ecranul se închide atunci când apropiem telefonul pentru a vorbi, faptul că putem să ne măsurăm distanțele parcurse, bătăile inimii, faptul că putem să folosim telefonul ca sistem de navigație, toate acestea se datorează folosirii senzorilor.
 	
-	Android împarte senzorii în mai multe categorii, deși tratarea lor se face într-un mod aproape unitar: senzori de \textbf{mișcare}, de \textbf{mediu}, de \textbf{poziție} și de \textbf{locație}.
+	Android împarte senzorii în mai multe categorii \cite{DeveloperAndroid}, deși tratarea lor se face într-un mod aproape unitar: senzori de \textbf{mișcare}, de \textbf{mediu}, de \textbf{poziție} și de \textbf{locație}.
 
 	Încă un mod în care Android împarte senzorii este acela că senzorii pot fi \textbf{hardware} sau \textbf{software}.\\
 	
 \subsubsection{Sistemul de coordonate al senzorilor}
 În general Android folosește un sistem de coordonate standard, cu 3 axe. Valorile venite de la senzori reprezintă schimbările pe aceste trei axe.
 
-Sistemul de coordonate este definit în raport cu ecranul dispozitivului (ținut în pozitie verticală), astfel: axa $X$ este orizontală și orientată către dreapta, axa $Y$ este verticală si orientată către partea superioară a dispozitivului, iar axa $Z$ este axa care „iese” din centrul ecranului.
+Sistemul de coordonate este definit în raport cu ecranul dispozitivului (ținut în pozitie verticală), astfel: axa $X$ este orizontală și orientată către dreapta, axa $Y$ este verticală si orientată către partea superioară a dispozitivului, iar axa $Z$ este axa care „iese” din centrul ecranului. Pentru o referință vizuală se poate consulta Figura \ref{fig:axis_device}, conformă cu documentația Android \cite{DeveloperAndroid}.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=5cm]{figures/axis_device.png}
 \caption{Sistemul de coordonate}
+\label{fig:axis_device}
 \end{figure}
 
 
@@ -205,11 +206,14 @@ Acești senzori oferă posibilitatea monitorizării mișcării dispozitivului, d
 	\item $Y$ este definit ca fiind tangent la pământ în locația curentă și orientat către Polul Nord Magnetic,
 	\item $Z$ este definit ca fiind perpendicular la planul definit de $X$ și $Y$, orientat către cer.
 	\end{itemize}
+	
+	Referința vizuală a acestei descrieri este în Figura \ref{fig:axis_globe}, conformă cu documentația Android \cite{DeveloperAndroid}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=5cm]{figures/axis_globe.png}
 \caption{Sistemul de coordonate utilizat de senzorul vector de rotație}
+\label{fig:axis_globe}
 \end{figure}
 
 \subsubsection{Senzori de mediu}
@@ -258,12 +262,13 @@ O activitate este o componentă a unei aplicații care oferă un ecran prin care
 
 Pentru a crea o activitate este necesar să fie creată o clasă care să extindă clasa de bază Activity. Prin aceasta ni se va cere să implementăm metoda onCreate(). Această metodă este entry-point-ul în activitate, similar unui main().
 
-Pentru a trata diferite situații posibile în ciclul de viață al activității este necesar să implementăm metode de tip callback prin care Android să ne notifice. Astfel putem primi notificare când suntem opriți, cand am fost readuși în focus, etc. 
+Pentru a trata diferite situații posibile în ciclul de viață al activității este necesar să implementăm metode de tip callback prin care Android să ne notifice. Astfel putem primi notificare când suntem opriți, cand am fost readuși în focus, etc. Ciclul de viață al unei activități este prezentat în Figura \ref{fig:activity_lifecycle}, așa cum apare ea în documentația Android \cite{DeveloperAndroid}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{figures/activity_lifecycle.png}
 \caption{Ciclul de viață al unei activități}
+\label{fig:activity_lifecycle}
 \end{figure}
 
 Fiind componente prin care utilizatorul poate interacționa cu aplicația, o activitate trebuie să ofere un layout în care să își declare componentele grafice. Acest lucru se face prin scrierea unui XML în care să fie descrisă structura elementelor. Există mai multe modalități de așezare a elementelor grafice pe ecran, iar acestea poartă numele de layout-uri. Amintim: LinearLayout, RelativeLayout, GridLayout, CardLayout, dintre cele mai folosite. Pe lângă layout, este necesar să adăugăm și componente precum butoane sau input-uri. Android are o paletă largă de astfel de elemente, iar unde biblioteca standard nu are elemente se poate interveni fie cu cod propriu, fie cu biblioteci externe.
@@ -279,12 +284,13 @@ Serviciile sunt componente ale aplicației care pot efectua operații în fundal
 
 Un serviciu poate lua două forme: \textbf{pornit} sau \textbf{„lipit”}. Un serviciu pornit poate rula în fundal pentru o perioadă nedeterminată de timp, chiar dacă acea componentă care l-a pornit a fost distrusă. Serviciul se va opri singur atunci când își finalizează treaba. Un serviciu „lipit” este acel serviciu care oferă o interacțiune de tip client-server cu acea componentă care l-a pornit. Dacă oprim componenta care a pornit serviciul, se oprește și serviciul.
 
-Pentru a crea un serviciu este necesar să fie creată o clasă care să extindă clasa Service. La fel ca în cazul activităților, Android ne va anunța prin callback-uri când se întâmplă evenimente relevante.
+Pentru a crea un serviciu este necesar să fie creată o clasă care să extindă clasa Service. La fel ca în cazul activităților, Android ne va anunța prin callback-uri când se întâmplă evenimente relevante. Ciclul de viață al unui serviciu este prezentat în Figura \ref{fig:service_lifecycle}, așa cum apare ea în documentația Android \cite{DeveloperAndroid}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{figures/service_lifecycle.png}
 \caption{Ciclul de viață al unui serviciu}
+\label{fig:service_lifecycle}
 \end{figure}
 
 \subsubsection{Content Provider}
@@ -302,15 +308,74 @@ Pe lângă paleta largă de obiecte pe care o pune la dispoziție prin sistemul 
 
 Deși există o gamă largă de API-uri disponibile, vom discuta pe scurt doar despre unul dintre acestea, relevant în contextul acestei lucrări, Google Maps API.
 
-\subsubsection{Google Maps API}
+\subsubsection{Google Maps API \cite{GoogleMapsAndroidAPI}}
 API-ul Google Maps oferă dezvoltatorilor posibilitatea adăugării de hărți în aplicațiile lor. Aceste hărți pot conține toate funcționalitățile pe care le găsim în aplicația Google Maps, printre care și clădiri 3D, hărți ale clădirilor, imagini din satelit.
 
 API-ul se ocupă în mod automat de tot ce înseamnă comunicarea cu serverele Google și cu afișarea hărții. Dezvoltatorul trebuie doar să implementeze funcționalitățile dorite peste cele de bază oferite deja de Google Maps. Dezvoltatorul poate, spre exemplu, să adauge propriul design harților, să modifice unghiul de vizualizare, să adauge linii, puncte sau alte elemente grafice pe diferite nivele (layers).
 
 
-
+\newpage
 \section{Aplicații și cercetări similare existente}
-TODO: Adauga ceva introducere 
+Domeniul navigației cu ajutorul senzorilor este unul în care se fac studii intense datorită impactului pe care îl poate avea. Putem găsi utilizări în industrii precum cea automotive, în zona de vânzări produse, în zona medicală sau ca ajutor pentru echipe de salvare.
+
+În studiul pentru elaborarea acestei lucrări am citit studii precedente, axate pe diferite componente ale aplicației pe care vreau să o dezvolt. Sunt cercetări în zona detecției pașilor cât mai corect, în zona determinării lungimii parcurse cu fiecare pas sau chiar în partea de hărți și orientare.
+
+Pe lângă studiile citite, am încercat să găsesc și aplicații similare cu care să compar munca mea. Aceste aplicații mi-au oferit, pe lângă posibilitatea de a mă compara cu ceva, și idei pe care să la folosesc în propria implementare.
+
+O să încep cu cercetările existente deoarece consider că acestea stau la baza ulterioarelor dezvoltări de aplicații.
+
+\subsection{Cercetări similare existente}
+Dacă este să analizăm munca de cercetare făcută, a cărei rezultat nu a fost o aplicație publicată, trebuie să luăm în considerare câteva articole care explică diferite metode de a obține ce se dorește și prin această lucrare.
+
+Aceste articole au fost publicate de echipe întregi, cu acces la finanțare și la tehnică. Acele articole care nu au fost făcute în echipă au fost făcute ca lucrări de master sau chiar de doctorat. %TODO: Modificare daca nu e asa%
+
+Dintre sursele pe care le consider relevante și de la care am învățat vreau să enumăr:
+ 
+\begin{itemize}  
+\item \textbf{Dead Reckoning Algorithms for Indoor Localization} \cite{ZhangYu}:\\
+Această lucrare este teza de masterat a singaporezului Zhang Yu și a reprezentat un punct de sprijin în elaborarea lucrării mele, atât prin informațiile oferite de el, cât și prin bibliografia extinsă pe care a prezentat-o. În bibliografia lui am găsit alte articole extrem de interesante din care am luat idei.
+
+În teza sa de master, el a încercat să compare robustețea unui număr de algoritmi de dead reckoning pentru persoane, folosind senzorii unei tablete. Diferența este că el face procesarea offline, nu pe dispozitiv. Aplicația pe care eu doresc să o propun face procesarea în timp real.
+
+Algoritmii prezentați de acesta variază de la algoritmi bazați pe \textbf{triangularizare folosind Wi-Fi} până la \textbf{Filtre Kalman Extinse}. Este de interes și studiul capabilităților senzorilor făcut de către Zhang Yu. De asemenea, principiile detecției pașilor au fost de mare ajutor.
+
+\item \textbf{A Step, Stride and Heading Determination for the Pedestrian
+Navigation System} \cite{StepLengthAndHeadingDetermination}:\\
+Această lucrare prezintă principiile de bază ale detecției pașilor, determinării lungimii unui pas și a orientării. Este o lucrare cu o analiză destul de detaliată a mersului uman, din care se extrag metode experimentale de determinare a pașilor.
+
+\item \textbf{Using the ADXL202 in Pedometer and Personal Navigation Applications} \cite{HarveyWeinberg}:\\
+Acest scurt articol prezintă o formulă de calculare a distanței parcurse într-un pas.
+
+Formula estimează lungimea unui pas k, $\rho_{k}$, ca fiind $\rho_{k} = K \sqrt[4]{A_{max}^{(k)} + A_{min}^{(k)}}$, unde $A_{max}^{(k)}$ este valoarea maximă a accelerației în timpul celui de-al k-lea pas, $A_{min}^{(k)}$ este valoarea minimă a accelerației în timpul celui de-al k-lea pas, iar $K$ este o constantă dependentă de utilizator. Această constantă se va afla printr-o procedură de calibrare.
+
+Această formulă este ulterior demonstrată ca fiind una bună în practică de către Diego Alvarez și colegii săi în articolul „Comparison of step length estimators from wearable accelerometer devices” \cite{StepLengthEstimatorsComparaison}.
+
+\item \textbf{An Indoor Navigation System For Smartphones} \cite{AbhijitChandgadkar}:\\
+În această lucrare se prezintă o modalitate de a oferi navigație în interiorul clădirilor, similar lucrării noastre. Aceasta se bazează pe aceeași idee de a estima poziția pe baza distanței parcurse cu fiecare pas și a diferențelor de orientare. 
+
+Se introduce și o metodă de reducere a erorilor prin folosirea unor marcaje amplasate în puncte cheie ale clădirii. Pentru aplicația noastră nu este fezabil un plan similar deoarece nu există o clădire țintă, ci se dorește funcționarea în orice clădire.
+
+\item \textbf{Exploring Smartphone-Based Indoor Navigation: A QR Code Assistance-Based Approach} \cite{QRNavigation}:\\
+În acest articol este prezentată o metodă de navigație similară celei implementate în această lucrare. 
+
+Pentru reducerea erorilor autorii propun montarea unor marcaje cu coduri \textbf{QR} (Quick Response) în puncte cheie ale clădirii. La fel ca mai sus, nu este fezabilă o astfel de abordare decât atunci când există clădiri țintă în care aplicația va fi folosită.
+
+\item \textbf{Filtering and Tracking for a Pedestrian Dead-Reckoning System} \cite{SuratKwanmuang}:\\
+În această lucrare de doctorat se implementează un sistem capabil să urmărească mișcările unui om pentru ca mai apoi un robot să poată urma o aceeași traiectorie. Motivația din spatele acestei idei este aceea de a avea un robot care să care provizii sau materiale grele în locul omului. Această aplicație are potențiale implicații în zona militară.
+
+Deși se implementează un dead reckoning pe bază de filtru Kalman, aplicația are un mare dezavantaj, acela că limitează utilizatorul la purtarea senzorului fixat pe picior. Această limitare face ca aplicația să nu fie utilă în zona în care dorește să intre aplicația prezentată în această lucrare de licență, aceea de a avea navigație pe dispozitive deja disponibile, fără a fi nevoie de alți senzori.
+
+\item \textbf{Filtering and Tracking for a Pedestrian Dead-Reckoning System} \cite{SDCPA10b} și \textbf{Indoor pedestrian navigation system using a modern smartphone} \cite{SCM10}:\\
+Aceste articole stau la baza implementării unei aplicații la \textbf{CRS4} (Center for Advanced Studies, Research and Development in Sardinia) a unei aplicații, \textbf{Roodin}. Această aplicație are la bază o idee similară aplicației prezentate în această licență.
+
+\item \textbf{Pedestrian localisation for indoor environments} \cite{OliverWoodman}:\\
+În teza sa de doctorat, Oliver Woodman prezintă metode de a obține navigație în interiorul clădirilor folosind senzori. Explicațiile sale cu privire la senzori și la ce înseamnă un sistem de navigație inerțială sunt importante pentru a înțelege eventualele surse de eroare.
+
+Prezentarea sa ajunge la disuții privitoare la filtre posibile care să îmbunătățească acuratețea (cum ar fi filtre Bayes sau filtre Kalman). Ideile prezentate de către el pot reprezenta un eventual punct de plecare pentru ulterioare îmbunătățiri ale aplicației prezentate.
+
+Totuși, implementarea sa se bazează pe folosirea unor senzori externi, montați pe picior, ceea ce limitează aplicabilitatea sa.
+
+\end{itemize}
 
 
 \subsection{Aplicații similare existente}
@@ -321,19 +386,19 @@ Aceste aplicații fie încearcă îmbunătățirea semnalului GPS prin adăugare
 Am putea considera aplicații similare și acele aplicații care încearcă oferirea de noi informații utilizatorilor folosind date de la GPS și senzori, de exemplu pentru a găsi poziția și respectiv orientarea lor în raport cu eventuale puncte de interes.
 
 \begin{itemize}  
-\item \textbf{Google Maps} \cite{GoogleMaps}: 
+\item \textbf{Google Maps} \cite{GoogleMaps}:\\
 Dacă discutăm despre aplicații despre navigație pentru pietoni, nu putem omite poate cea mai cunoscută dintre ele, Google Maps. Această aplicație este oferită de către Google și oferă funcționalități de bază, cum ar fi afișarea locației curente, oferirea de indicații către alte locații, dar și afișarea de informații legate de mijloacele de transport în comun sau starea traficului. Este o aplicație care arată cât de multe date are Google la dispoziție. 
 
 Marele dezavantaj al acestei aplicații este acela că are nevoie de acces la semnal GPS și la serviciul de date pentru descărcarea hărților (se oferă acum posibilitatea descărcării hărților pentru ca aplicația să funcționeze și offline).
  
 Google Maps este inutil în zonele cu semnal GPS slab sau în interiorul clădirilor. Nu îl putem folosi, de exemplu, pentru a găsi o sală de curs într-o facultate, un cabinet într-un spital sau un magazin într-un mall. 
  
-\item \textbf{Strava} \cite{Strava}:
+\item \textbf{Strava} \cite{Strava}:\\
 O altă aplicație care oferă navigație pentru pietoni, și nu numai, este Strava. Această aplicație a fost construită ca un asistent de fitnes folosit pentru a înregistra traseele celor cărora le place să facă sport, însă componenta sa socială permite salvarea de trasee și oferirea/parcurgerea lor.
 
 Deoarece este în principal o aplicație de fitness, Strava nu pune mare accent pe parte de navigație. Nu găsim în Strava informațiile pe care le găsim în Google Maps. Pe lângă acest dezavantaj, și Strava suferă de aceeași problemă a dependenței de GPS. Fără GPS aplicația doar măsoară numărul de pași și estimeasă distanța parcursă.
 
-\item \textbf{SmartNavi - Step Navigation} \cite{SmartNavi}:
+\item \textbf{SmartNavi - Step Navigation} \cite{SmartNavi}:\\
 O aplicație care se apropie de ceea ce se dorește a fi această lucrare este SmartNavi - Step Navigation. Această aplicație a fost creată în cadrul unui set de experimente pentru platforma Android, prin care Google a oferit posibilitatea unor dezvoltatori să își pună ideile în practică, aceștia beneficiind de marketingul făcut de compania gigant. Prin participarea la aceste experimente, dezvoltatorii sunt de acord să facă public codul sursă pentru a putea fi folosit și de către alți dezvoltatori care să ducă mai departe ideile și să lanseze aplicații noi.
 
 Aplicația oferă posibilitatea de a oferi navigație fără a avea semnal GPS, doar pe baza măsurării numărului de pași și a direcției luate de utilizator. Aceste este un mare avantaj dacă o comparăm cu aplicații precum Google Maps sau Strava. Aplicația recunoaște pașii și direcția bazându-se pe senzorii dispozitivului. 
@@ -344,31 +409,28 @@ Dezavantajul acestei aplicații este că utilizatorul trebuie să țină mereu t
 
 SmartNavi dorește să ofere posibilitatea de a avea navigație fără un consum foarte mare de baterie, dorința lor nu este neapărat de a oferi un sistem capabil de a lucra în interiorul clădirilor. Acesta poate fi privit ca un dezavantaj, aplicația nu are o țintă clară, ea doar dorește să arate ce este posibil pe această platformă.
 
-\item \textbf{DaRe - Pedestrian Navigation} \cite{DaRe}:
+\item \textbf{DaRe - Pedestrian Navigation} \cite{DaRe}:\\
 Aplicația DaRe oferă navigație primind date de la un senzor montat pe piciorul purtătorului, care comunică prin Bluetooth cu smartphone-ul. DaRe are două moduri de lucru: metoda grafică, în care afișează traseul pe un plan bi-dimensional, și modul text, în care afișează date cum ar fi: numărul de pași, distanța parcursă și viteza medie. 
 
 Totuși, comparativ cu aplicația descrisă în această lucrare, DaRe are marele avantaj de a avea un senzor extern plasat exact pe piciorul purtătorului. Asta garantează că pașii vor fi detectați aproape perfect, comparativ cu detecția făcută cu ajutorul telefonului. Măsuratorile făcute cu telefonul sunt predispuse la mișcările utilizatorului, care pot să declanșeze detectorul de pași și să numere în plus.
 
 Un alt dezavantaj al DaRe este acela că nu plasează utilizatorul pe o hartă, ci doar îl arată într-un plan bidimensional simplu. Aplicația nu are decât scop de testare al posibilităților unui astfel de sistem.
 
-\item \textbf{Landmarker} \cite{Landmarker}:
+\item \textbf{Landmarker} \cite{Landmarker}:\\
 O altă aplicație care se bazează foarte mult pe senzori și pe locație pentru a oferi utilizatorului informații este Landmarker. Această aplicație dorește să aducă pe platforma Android un mod nou de a găsi puncte de interes în orașe. 
 
 Aplicația recunoaște poziția curentă a utilizatorului și, folosind senzorii dispozitivului, reacționează la mișcările acestuia, arătându-i pe ecran unde (distanța și punctul cardinal) se află locațiile de interes.
 
 Landmarker intră într-o altă zonă față de toate celelalte aplicații, aceea a oferirii de informații legate de puncte de interes din apropiere. Nu se ocupă de oferirea de navigație (ba chiar oferă posibilitatea să se treacă la Google Maps dacă se dorește a se găsi un traseu până la punctul de interes) și este dependentă de GPS. Este interesantă în contextul lucrării curente deoarece folosește senzorii telefonului pentru a determina orientarea față de un punct cardinal, ceea ce este esențial pentru oferirea de navigație în clădiri sau zone cu semnal GPS slab.
 
+\item \textbf{Maps People} \cite{MapsPeople}:\\
+Aceast serviciu oferă componenta lipsă a oricărei aplicații de navigație în interiorul clădirilor, adică partea de hărți. Este un serviciu cu plată care permite căutarea de locații, oferirea de anunțuri relevante și de rute între locații.
+
 \end{itemize}
 
-
-\subsection{Cercetări similare existente}
-Dacă este să analizăm munca de cercetare făcută, a cărei rezultat nu a fost o aplicație publicată, trebuie să luăm în considerare câteva articole care explică diferite metode de a obține ce se dorește și prin această lucrare.
-
-Amintesc aici câteva din sursele de inspirație:
- 
-\begin{itemize}  
-\item \textbf{TODO} \cite{GoogleMaps}: 
-\end{itemize}
+\newpage
+\section{Parte personală}
+TODO: 
 
 \newpage
 \bibliography{inside_nav_bib}
