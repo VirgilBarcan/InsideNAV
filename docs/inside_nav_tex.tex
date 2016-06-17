@@ -28,10 +28,12 @@
 \begin{document}
 \maketitle
 
+\newpage
 \tableofcontents
 
 \newpage
-\section{Introducere}
+\section*{Introducere}
+\addcontentsline{toc}{section}{Introducere} 
 %Pagina cu introducerea
 %Introducerea contine descrierea pe scurt a problemei, motivatia de a face aceasta licenta, obiectivele lucrarii si prezentarea capitolelor
 \subsection{Motivație}
@@ -61,7 +63,7 @@ Inspirația pentru această aplicație a venit din două surse, una o problemă,
 
 În cazul automobilelor estimarea distanței parcurse este extrem de simplă și de precisă, se numără de câte ori se învarte fiecare roată. Desigur, implementarea unui sistem similar „\textbf{dead reckoning}-ului” din industria automotive în zona „\textbf{pedestrian}” sau „\textbf{personal}” aduce cu sine un set de noi probleme. Însă aceste probleme sunt unele de natură tehnică, la care putem găsi soluții care să rezolve, prin aplicația rezultată, problema primordială, aceea a locației în clădiri.\\
 
-\newpage
+
 \subsection{Obiectivele lucrării}
 \tab{Această lucrare își propune implementarea unei aplicații prototip care să funcționeze pe dispozitive mobile care rulează sistemul de operare Android și care va fi capabilă să estimeze poziția utilizatorului chiar și atunci când celelalte servicii de localizare nu pot face asta, în special în interiorul clădirilor.}\\
 
@@ -70,6 +72,28 @@ Aplicația va trebui să ofere utilizatorului o interfață în care să îi fie
 Aplicația trebuie să poată funcționa și în fundal, fără să aducă un consum prea ridicat de baterie.
 
 Implementarea se va concentra pe dezvoltarea unui sistem prin care mișcările utilizatorului să fie învățate astfel încât estimarea să fie cât mai corectă.\\
+
+
+\subsection{Descrierea pe scurt a soluției}
+\tab{Aplicația implementată este reușește să estimeze poziția utilizatorului prin estimarea lungimii pașilor și integrarea acestora cu diferențele de orientare, așa cum se vede în Figura \ref{fig:pdr_idea}.}\\
+
+Practic, aplicația urmărește datele de la senzori și încearcă să detecteze anumite modele de unde ale accelerometrului astfel încât să determine dacă un pas a fost sau nu făcut. Dacă se detectează că un pas a fost făcut, atunci aplicația estimează distanța parcursă și calculează unghiul cu care s-a deplasat față de direcția anterioară de deplasare.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{figures/pedestrian-dead-reckoning-modified.jpg}
+\caption{Descriere vizuală a ideii aplicației}
+\label{fig:pdr_idea}
+\end{figure}
+
+
+\subsection{Element de noutate}
+\tab{Aplicația implementată aduce ca element de noutate faptul că dispozitivul poate fi ținut în orice poziție relativ la Pământ, cu mențiunea că trebuie să rămână relativ fix în raport cu utilizatorul.}\\
+
+Aplicațiile anterioare restricționau utilizatorul la ținerea dispozitivului într-o poziție nu prea comodă, orizontală în raport cu Pământul.
+
+Tot ca element de noutate este și pasul de calibrare, făcut fie într-un spațiu în care să existe semnal GPS, fie prin introducerea înalțimii utilizatorului. Acest pas de calibrare este folosit pentru a inițializa variabile specifice utilizatorului, astfel încât aplicația să recunoască mișcările acestuia cât se poate de bine.
+
 
 \subsection{Prezentarea pe scurt a capitolelor}
 \tab{În secțiunea \ref{AplicatiiCercetariSimilare} vor fi descrise articole și aplicații ale căror influență se găsește și în lucrarea de față. Vor fi prezentate lucrări de master și de doctorat, articole științifice și aplicații. Acestea au servit ca puncte de sprijin pe toată durata elaborării acestei lucrări, oferind referințe multiple și idei de rezolvare.}
@@ -298,7 +322,7 @@ Cum integrarea este opusa derivării, putem afla distanța parcursă cunoscând 
 \begin{equation} 
 \left.
 \begin{aligned} v = \int_{}^{} a dt\\ x = \int_{}^{} v dt \end{aligned} \right\} \Rightarrow x = \iint_{} a \,dt\,dt
-\end{equation}
+\end{equation}\\
 
 
 \textbf{Giroscopul}\\
@@ -568,9 +592,9 @@ Pentru stocarea de date Android oferă posibilitatea folosirii unor obiecte de s
 
 \newpage
 \subsection{Componentele unei aplicații}
-Așa cum am amintit deja, există patru tipuri de componente: \textbf{activități}, \textbf{servicii}, \textbf{content provider}, \textbf{broadcast receiver}.
+Așa cum am amintit deja, există patru tipuri de componente: \textbf{activități}, \textbf{servicii}, \textbf{content provider}, \textbf{broadcast receiver}.\\
 
-\subsubsection{Activități}
+\textbf{Activități}\\
 O activitate este o componentă a unei aplicații care oferă un ecran prin care utilizatorul să interacționeze cu ea. Fiecare activitate primește o fereastră pe care să deseneze elementele sale grafice.
 
 Pentru a crea o activitate este necesar să fie creată o clasă care să extindă clasa de bază Activity. Prin aceasta ni se va cere să implementăm metoda onCreate(). Această metodă este entry-point-ul în activitate, similar unui main().
@@ -590,14 +614,14 @@ Dacă se dorește un mod de afișare mai dinamic, se pot adăuga \textbf{Fragmen
 
 Un \textbf{Fragment} reprezintă o componentă modulară a unei activități. O activitate poate conține mai multe fragmente care să interacționeze între ele. Este ca și cum am construi o aplicație desktop cu mai multe ferestre disponibile, doar că aici nu avem ferestre efective, ci zone din activitate. Activitatea descrie în layout unde trebuie așezat fiecare fragment iar apoi poate modifica din cod așezarea acestora pentru a crea un comportament dinamic. Putem avea pe o aceeași activitate două ecrane și să ajungem de la unul la celalalt printr-un swipe.
 
-Marele avantaj al fragmentelor este acela că oferă funcționalități similare din punctul de vedere al utilizatorului cu o activitate, însă totul în interiorul unei activități, ceea ce scutește sistemul de la un efort suplimentar. Interfețele devin mai rapide și mai fluide, pe lângă marele avantaj al oferirii unei experiențe mai plăcute pentru utilizator.
+Marele avantaj al fragmentelor este acela că oferă funcționalități similare din punctul de vedere al utilizatorului cu o activitate, însă totul în interiorul unei activități, ceea ce scutește sistemul de la un efort suplimentar. Interfețele devin mai rapide și mai fluide, pe lângă marele avantaj al oferirii unei experiențe mai plăcute pentru utilizator.\\
 
-\subsubsection{Servicii}
+\textbf{Servicii}\\
 Serviciile sunt componente ale aplicației care pot efectua operații în fundal (nu au o parte care să interacționeze cu utilizatorul, așa cum au activitățile). Serviciile sunt utile pentru operații de genul citire fișiere mari, interacțiune cu senzori, interacțiune cu rețeaua.
 
 Un serviciu poate lua două forme: \textbf{pornit} sau \textbf{„lipit”}. Un serviciu pornit poate rula în fundal pentru o perioadă nedeterminată de timp, chiar dacă acea componentă care l-a pornit a fost distrusă. Serviciul se va opri singur atunci când își finalizează treaba. Un serviciu „lipit” este acel serviciu care oferă o interacțiune de tip client-server cu acea componentă care l-a pornit. Dacă oprim componenta care a pornit serviciul, se oprește și serviciul.
 
-Pentru a crea un serviciu este necesar să fie creată o clasă care să extindă clasa Service. La fel ca în cazul activităților, Android ne va anunța prin callback-uri când se întâmplă evenimente relevante. Ciclul de viață al unui serviciu este prezentat în Figura \ref{fig:service_lifecycle}, așa cum apare ea în documentația Android \cite{DeveloperAndroid}.
+Pentru a crea un serviciu este necesar să fie creată o clasă care să extindă clasa Service. La fel ca în cazul activităților, Android ne va anunța prin callback-uri când se întâmplă evenimente relevante. Ciclul de viață al unui serviciu este prezentat în Figura \ref{fig:service_lifecycle}, așa cum apare ea în documentația Android \cite{DeveloperAndroid}.\\
 
 \begin{figure}[h]
 \centering
@@ -606,16 +630,16 @@ Pentru a crea un serviciu este necesar să fie creată o clasă care să extind�
 \label{fig:service_lifecycle}
 \end{figure}
 
-\subsubsection{Content Provider}
+\textbf{Content Provider}\\
 Un content provider este o componentă care oferă acces la un set de date structurate, cum ar fi, de exemplu, contactele. Aceste componente încapsulează datele și oferă mecanisme pentru a defini chestiuni de securitate. Utilizarea lor este atunci când se dorește să se ofere acces la datele oferite de un proces unui alt proces.
-Modul de lucru cu această componentă este similar într-o oarecare măsură cu lucrul cu o bază de date. Pentru a primi date se fac interogări, iar pentru a parcurge datele folosim un cursor.
+Modul de lucru cu această componentă este similar într-o oarecare măsură cu lucrul cu o bază de date. Pentru a primi date se fac interogări, iar pentru a parcurge datele folosim un cursor.\\
 
-\subsubsection{Broadcast Receiver}
+\textbf{Broadcast Receiver}\\
 Un broadcast receiver este o componentă care permite captarea și procesarea unor mesaje trimise de tip broadcast, trimise către oricine le poate înțelege și procesa.
 
 Această componentă este declarată în AndroidManifest, acolo unde se specifică și ce mesaje poate să înțeleagă. Utilitatea lor este, de exemplu, de a „asculta” când s-a repornit telefonul, eventual pentru a porni alte aplicații și servicii.
 
-\newpage
+
 \subsection{API-uri Google}
 Pe lângă paleta largă de obiecte pe care o pune la dispoziție prin sistemul Android, Google mai oferă și acces la servicii suplimentare care pot aduce mari îmbunătățiri aplicațiilor. Sunt servicii care scutesc dezvoltatorii de scris și testat cod, oferindu-le metode de a afișa hărți, de a introduce componente sociale în aplicații, de a construi jocuri noi, de a face procesări în cloud și nu numai.
 
