@@ -125,11 +125,34 @@ MapsPeople A/S.
 \newblock {Maps People}.
 \newblock \url{http://mapspeople.com/}, 2016.
 
+\bibitem{DopplerEffectWikipedia}
+Wikipedia.
+\newblock {Doppler effect}.
+\newblock \url{https://en.wikipedia.org/wiki/Doppler_effect/}, 2008.
+
 \bibitem{GPSHistoryNASA}
 NASA.
 \newblock {Global Positioning System History}.
 \newblock
   \url{http://www.nasa.gov/directorates/heo/scan/communications/policy/GPS_History.html/},
   2016.
+
+\bibitem{GPSAccuracy}
+GPS.gov.
+\newblock {GPS Accuracy}.
+\newblock \url{http://www.gps.gov/systems/gps/performance/accuracy/}, 2008.
+
+\bibitem{GLONASSAccuracy}
+Russian~System of~Differentional~Correction and Monitoring.
+\newblock {Precision of GLONASS navigation definitions}.
+\newblock
+  \url{http://www.sdcm.ru/smglo/st_glo?version=eng&repdate&site=extern}, 2008.
+
+\bibitem{BeiDouAccuracy}
+Shi Chuang, Zhao QiLe, Li~Min, Tang WeiMing, Hu~ZhiGang, Lou YiDong, Zhang
+  HongPing, Niu XiaoJi, and Liu JingNan.
+\newblock Precise orbit determination of beidou satellites with precise
+  positioning.
+\newblock {\em SCIENCE CHINA Earth Sciences}, 55(7):1079, 2012.
 
 \end{thebibliography}
