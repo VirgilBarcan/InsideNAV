@@ -11,6 +11,7 @@
 \usepackage{url}
 \usepackage{tabto}
 \usepackage{fancyhdr}
+\usepackage{wrapfig}
 
 \newunicodechar{Ș}{\cb{S}}
 \newunicodechar{ș}{\cb{s}}
@@ -156,7 +157,7 @@ Tot ca element de noutate este și pasul de calibrare, făcut fie într-un spaț
 
 În secțiunea \ref{ObiecteAndroid} vor fi prezentate obiectele Android care au fost folosite predominant în dezvoltarea aplicației. Se va trece prin componentele unei aplicații Android, precum și prin câteva detalii privitoare la API-ul Google Maps.
 
-În secțiunea \ref{DescriereAplicatie} va fi prezentată pe larg aplicația.
+În secțiunea \ref{DescriereAplicatie} va fi prezentată pe larg aplicația, începând cu interfața vizuală și finalizând cu partea care rulează în fundal.
 %TODO: Ofera mai multe informatii, eventual pe subsectiuni
 
 În secțiunea \ref{TestareAplicatie} vor fi prezentate rezultatele experimentale. Va fi și locul în care vom explica metodologia de testare.
@@ -211,6 +212,8 @@ Această formulă este ulterior demonstrată ca fiind una bună în practică de
 
 Se introduce și o metodă de reducere a erorilor prin folosirea unor marcaje amplasate în puncte cheie ale clădirii. Pentru aplicația noastră nu este fezabil un plan similar deoarece nu există o clădire țintă, ci se dorește funcționarea în orice clădire.
 
+De asemenea, aplicația implementată în această lucrare își propune să funcționeze în orice mediu fără semnal, nu doar în clădiri.
+
 \item \textbf{Exploring Smartphone-Based Indoor Navigation: A QR Code Assistance-Based Approach} \cite{QRNavigation}:\\
 În acest articol este prezentată o metodă de navigație similară celei implementate în această lucrare. 
 
@@ -227,7 +230,7 @@ Aceste articole stau la baza implementării unei aplicații la \textbf{CRS4} (Ce
 \item \textbf{Pedestrian localisation for indoor environments} \cite{OliverWoodman}:\\
 În teza sa de doctorat, Oliver Woodman prezintă metode de a obține navigație în interiorul clădirilor folosind senzori. Explicațiile sale cu privire la senzori și la ce înseamnă un sistem de navigație inerțială sunt importante pentru a înțelege eventualele surse de eroare.
 
-Prezentarea sa ajunge la disuții privitoare la filtre posibile care să îmbunătățească acuratețea (cum ar fi filtre Bayes sau filtre Kalman). Ideile prezentate de către el pot reprezenta un eventual punct de plecare pentru ulterioare îmbunătățiri ale aplicației prezentate.
+Prezentarea sa ajunge la disuții privitoare la filtre posibile care să îmbunătățească acuratețea (cum ar fi filtre Bayes sau filtre Kalman).
 
 Totuși, implementarea sa se bazează pe folosirea unor senzori externi, montați pe picior, ceea ce limitează aplicabilitatea sa.
 
@@ -547,7 +550,7 @@ O nouă versiune a Android este în dezvoltare acum, aceasta având numele de co
 	
 
 \newpage
-\subsection{Senzorii disponibili pe platforma Android}
+\subsection{Senzorii Android}
 Majoritatea dispozitivelor care rulează Android au încorporați diverși senzori. Aceștia sunt folosiți în diferite contexte în timpul folosirii dispozitivului. Scopul senzorilor este să urmărească eventuale schimbări astfel încât sistemul să răspundă în cel mai bun mod cu putință.
 
 	Deși poate nu este evident, impactul senzorilor este major. Faptul că ecranul se închide atunci când apropiem telefonul pentru a vorbi, faptul că putem să ne măsurăm distanțele parcurse, bătăile inimii, faptul că putem să folosim telefonul ca sistem de navigație, toate acestea se datorează folosirii senzorilor.
@@ -691,7 +694,7 @@ Un broadcast receiver este o componentă care permite captarea și procesarea un
 
 Această componentă este declarată în AndroidManifest, acolo unde se specifică și ce mesaje poate să înțeleagă. Utilitatea lor este, de exemplu, de a „asculta” când s-a repornit telefonul, eventual pentru a porni alte aplicații și servicii.
 
-
+\newpage
 \subsection{API-uri Google}
 Pe lângă paleta largă de obiecte pe care o pune la dispoziție prin sistemul Android, Google mai oferă și acces la servicii suplimentare care pot aduce mari îmbunătățiri aplicațiilor. Sunt servicii care scutesc dezvoltatorii de scris și testat cod, oferindu-le metode de a afișa hărți, de a introduce componente sociale în aplicații, de a construi jocuri noi, de a face procesări în cloud și nu numai.
 
@@ -714,34 +717,45 @@ Acest capitol va conține descrierea implementării aplicației, începând cu e
 \subsection{Interfața} \label{DescriereInterfata}
 Aplicația conține o \textbf{activitate} principală care oferă acces către mai multe \textbf{fragmente}. Fiecare fragment va oferi utilizatorului final o funcționalitate din cele descrise la început, în obiective.
 
-Fragmentele oferite utilizatorului sunt următoarele, în ordinea apariției lor în meniul de navigație care apare din partea stângă (numit în cadrul Android \textit{NavigationDrawer}):
+Toate fragmentele sunt construite de către activitatea principală și păstrate în memorie. Acestea nu ocupă foarte multă memorie și deoarece sunt deja construite viteza cu care se deschid este una foarte bună, ele având deja toate datele necesare inițializate.
+
+În continuare vor fi descrise fragmentele în ordinea apariției lor în meniul de navigație care apare din partea stângă (numit în cadrul Android \textit{NavigationDrawer}). Acest meniu arată așa cum este surprins în Figura \ref{fig:navigation_drawer}.
+
+\begin{figure}[!htb]
+\minipage{0.45\textwidth}
+  \centering
+  \includegraphics[width=5cm]{figures/navigation_drawer.png}
+  \caption{NavigationDrawer}
+  \label{fig:navigation_drawer}
+\endminipage\hfill
+\minipage{0.45\textwidth}%
+  \centering  
+  \includegraphics[width=5cm]{figures/fragment_home.png}
+  \caption{Fragment Home}
+  \label{fig:fragment_home}
+\endminipage
+\end{figure}
 
 \begin{itemize}  
 \item \textbf{Fragment Home}:\\
 Acest fragment va oferi utilizatorului butoane prin care să navigheze în restul aplicației. Aceste butoane sunt prezente și în meniul din partea stângă, însă acesta este ascuns la deschiderea aplicației și de aceea a fost necesară implementarea unui fragment care să ofere aceeași funcționalitate. Modul în care arată acest fragment este surprins în Figura \ref{fig:fragment_home}.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=5cm]{figures/fragment_home.png}
-\caption{Fragment Home}
-\label{fig:fragment_home}
-\end{figure}
-
 
 \item \textbf{Fragment Map}:\\
 Acest fragment este probabil cel mai important din întreaga aplicație, el fiind locul în care se văd clar rezultatele algoritmului din fundal. Acest fragment afișează poziția curentă, fie ea poziție GPS sau poziție calculată de algoritmul de dead reckoning, așa cum poate fi văzut în Figura \ref{fig:fragment_map}.
 
 În cazul în care utilizatorul se deplasează, se va afișa și calea parcursă de acesta, bazată pe datele oferite de algoritmul de dead reckoning, care va fi explicat în secțiunea următoare.
 
-Tot în acest fragment se afișează și eventualele puncte de interes căutate de către utilizator, așa cum poate fi văzut în Figura \ref{fig:fragment_map_interest_point}.
+Tot în acest fragment se afișează și eventualele puncte de interes căutate de către utilizator. Pentru punctele de interes selectate de către utilizator se afișează, la selectare, numele, așa cum poate fi văzut în Figura \ref{fig:fragment_map_interest_point}.
 
 \begin{figure}[!htb]
 \minipage{0.45\textwidth}
+  \centering
   \includegraphics[width=5cm]{figures/fragment_map.png}
   \caption{FragmentMap - Locația curentă}
   \label{fig:fragment_map}
 \endminipage\hfill
 \minipage{0.45\textwidth}%
+  \centering  
   \includegraphics[width=5cm]{figures/fragment_map_interest_point.png}
   \caption{FragmentMap - Afișare punct de interes}
   \label{fig:fragment_map_interest_point}
@@ -751,15 +765,47 @@ Tot în acest fragment se afișează și eventualele puncte de interes căutate 
 \item \textbf{Fragment Status}:\\
 Acest fragment este util în special pentru faza de testare sau pentru cei curioși de cum variază diferiții parametri ai aplicației pe parcursul rulării acesteia.
 
-În acest fragment se afișează valorile curente obținute de la senzori, cum ar fi acyratețea GPS-ului, locația GPS curentă, numărul de pași numărați, lungimea ultimului pas, valoare unghiului cu care suntem orientați relativ la nord, valori pentru accelerație și giroscop.
+În acest fragment se afișează valorile curente obținute de la senzori, cum ar fi acuratețea GPS-ului, locația GPS curentă și altele, cum se poate observa în Figura \ref{fig:fragment_status}.
 
-Toate aceste informații sunt afișate într-o listă, așa cum poate fi observat în captura de ecran a acestui fragment din Figura \ref{fig:fragment_status}.
-
-\begin{figure}[h]
-\centering
-\caption{FragmentStatus}
-\label{fig:fragment_status}
+\begin{figure}[!htb]
+\minipage{0.45\textwidth}
+  \centering
+  \includegraphics[width=5cm]{figures/fragment_search1.png}
+  \caption{FragmentSearch - Ecran inițial}
+  \label{fig:fragment_search1}
+\endminipage\hfill
+\minipage{0.45\textwidth}%
+  \centering  
+  \includegraphics[width=5cm]{figures/fragment_search2.png}
+  \caption{FragmentMap - Introducere text}
+  \label{fig:fragment_search2}
+\endminipage
 \end{figure}
+
+\item \textbf{Fragment Search}:\\
+Acest fragment apare doar pentru a oferi utilizatorului posibilitatea căutării și vizualizării unor puncte de interes. Se vor putea construi și rute de la locația curentă către punctul selectat.
+
+Utilizatorul trebuie să introducă numele punctului căutat. După ce vor fi scrise minim trei caractere, aplicația va căuta zece locații care să fie cele mai relevante și le va afișa în listă. Pentru fiecare astfel de element al listei se vor afișa și două butoane, unul de afișare pe hartă (cel din stanga) și unul de calculare a unei rute (cel din dreapta), așa cum se observă în Figurile \ref{fig:fragment_search1} și \ref{fig:fragment_search2}.
+
+
+\begin{figure}[!htb]
+\minipage{0.45\textwidth}
+  \centering
+  \includegraphics[width=5cm]{figures/fragment_status.png}
+  \caption{FragmentStatus}
+  \label{fig:fragment_status}
+\endminipage\hfill
+\minipage{0.45\textwidth}%
+  \centering  
+  \includegraphics[width=5cm]{figures/fragment_pedometer.png}
+  \caption{FragmentPedometer}
+  \label{fig:fragment_pedometer}
+\endminipage
+\end{figure}
+
+
+\item \textbf{Fragment Pedometer}:\\
+Acest fragment poate fi util atunci când utilizatorul dorește doar să știe câți pași a făcut. Aici îi vor fi afișați toți pașii făcuți de când a început ziua. Acest fragment are o interfață simplistă, el existând doar pentru a apropia aplicația de zona de fitness. Interfața este cea din Figura \ref{fig:fragment_pedometer}.
 
 
 \end{itemize}
