@@ -5,23 +5,6 @@ Android Central.
 \newblock {Android History}.
 \newblock \url{http://www.androidcentral.com/android-history/}, 2016.
 
-\bibitem{AndroidVersionsHistory}
-Tom's Guide.
-\newblock {Android Version History: A Timeline of New Features}.
-\newblock
-  \url{http://www.tomsguide.com/us/android-version-history,news-21211.html},
-  2015.
-
-\bibitem{AndroidHistory}
-Inc. Google.
-\newblock {Android History}.
-\newblock \url{https://www.android.com/history/}, 2016.
-
-\bibitem{DeveloperAndroid}
-Inc. Google.
-\newblock {Android Developer}.
-\newblock \url{https://developer.android.com/}, 2016.
-
 \bibitem{GoogleMapsAndroidAPI}
 Inc. Google.
 \newblock {Maps Android API}.
@@ -154,5 +137,22 @@ Shi Chuang, Zhao QiLe, Li~Min, Tang WeiMing, Hu~ZhiGang, Lou YiDong, Zhang
 \newblock Precise orbit determination of beidou satellites with precise
   positioning.
 \newblock {\em SCIENCE CHINA Earth Sciences}, 55(7):1079, 2012.
+
+\bibitem{AndroidVersionsHistory}
+Tom's Guide.
+\newblock {Android Version History: A Timeline of New Features}.
+\newblock
+  \url{http://www.tomsguide.com/us/android-version-history,news-21211.html},
+  2015.
+
+\bibitem{AndroidHistory}
+Inc. Google.
+\newblock {Android History}.
+\newblock \url{https://www.android.com/history/}, 2016.
+
+\bibitem{DeveloperAndroid}
+Inc. Google.
+\newblock {Android Developer}.
+\newblock \url{https://developer.android.com/}, 2016.
 
 \end{thebibliography}

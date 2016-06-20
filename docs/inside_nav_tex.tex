@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt, a4paper, oneside]{article}
 
 \usepackage[romanian]{babel}
 \usepackage[utf8x]{inputenc}
@@ -10,6 +10,7 @@
 \usepackage{newunicodechar}
 \usepackage{url}
 \usepackage{tabto}
+\usepackage{fancyhdr}
 
 \newunicodechar{Ș}{\cb{S}}
 \newunicodechar{ș}{\cb{s}}
@@ -25,11 +26,62 @@
 \title{Inside NAV}
 \author{Barcan Virgil-Gheorghe}
 
+\setlength{\parindent}{2em}
+\setlength{\parskip}{3mm}
+ 
+%% -----------------Front page-------------------------------------
 \begin{document}
-\maketitle
+\pagestyle{empty}
+\centerline{\small{UNIVERSITATEA „ALEXANDRU IOAN CUZA” IAȘI}}
+\vspace{0.5cm}
+\centerline{\textbf{\Large{\textsf{FACULTATEA DE INFORMATICĂ}}}}
+\vspace{2.5cm}
+\begin{center}
+	\includegraphics[width=3cm,height=3cm]{sigla_FII.png}
+\end{center}
+\vspace{2.5cm}
+\centerline{\Large{LUCRARE DE LICENȚĂ}}
+\vspace{1cm}
+\centerline{\textbf{\LARGE{Sistem de îmbunătățire a navigației}}}
+\vspace{0.2cm}
+\centerline{\textbf{\LARGE{pe platforma Android}}}
+\vspace{1cm}
+\centerline{propusă de}
+\vspace{1cm}
+\centerline{\textbf{\Large{\textsf{Virgil-Gheorghe Barcan}}}}
+\vspace{1.5cm}
+\centerline{\textsf{\textbf{Sesiunea:} \textit{iulie, 2016}}}
+\vspace{0.5cm}
+\centerline{Coordonator științific}
+\vspace{0.5cm}
+\centerline{\textsf{\textbf{\large{Lector, Dr. Dragoș Teodor Gavriluț}}}}
+
+\clearpage
+%% ----------------------------------------------------------------
+
+%% --------------Page Title----------------------------------------
+\pagestyle{empty}
+\centerline{\textbf{\large{\textsf{UNIVERSITATEA „ALEXANDRU IOAN CUZA” IAȘI}}}}
+\vspace{0.5cm}
+\centerline{\textbf{\large{\textsf{FACULTATEA DE INFORMATICĂ}}}}
+\vspace{5cm}
+\centerline{\textbf{\LARGE{Sistem de îmbunătățire a navigației}}}
+\vspace{0.2cm}
+\centerline{\textbf{\LARGE{pe platforma Android}}}
+\vspace{3cm}
+\centerline{\textbf{\Large{\textsf{Virgil-Gheorghe Barcan}}}}
+\vspace{2cm}
+\centerline{\Large{{\textsf{\textbf{Sesiunea:} \textit{iulie, 2016}}}}}
+\vspace{4.5cm}
+\centerline{\textbf{Coordonator științific}}
+\vspace{0.5cm}
+\centerline{\textsf{\textbf{\large{Lector, Dr. Dragoș Teodor Gavriluț}}}}
 
 \newpage
 \tableofcontents
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
 
 \newpage
 \section*{Introducere}
@@ -116,7 +168,7 @@ Tot ca element de noutate este și pasul de calibrare, făcut fie într-un spaț
 \newpage
 
 
-\section{Aplicații și cercetări similare existente} \label{AplicatiiCercetariSimilare}
+\section{Muncă anterioară} \label{AplicatiiCercetariSimilare}
 %Pagini in care se prezinta cercetarile si aplicatiile anterioare
 %In prima parte se prezinta cercetarile
 %In a doua parte se prezinta aplicatiil
@@ -377,9 +429,9 @@ Fiecare nouă versiune a sistemului este denumită în ordine alfabetică după 
 
 
 \newpage
-\subsection{Versiunile Android \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}
+\subsection{Versiunile Android}
 %Android 1.0
-\tab{\textbf{Android 1.0}}\\
+\tab{\textbf{Android 1.0} \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Prima versiune a sistemului de operare Android, denumită, deloc pompos, Android 1.0, dădea impresia de produs nefinalizat, însă lăsa să se întrevadă planurile Google pentru această platformă. Această versiune deja avea părți care, comparate cu ce era  pe piață la momentul acela, erau mult superioare. Sunt lucruri pe care acum le trecem cu vederea, dar care atunci erau noutăți, widget-urile, zonele de notificări și nu numai. 
 
 Prima versiune a Android includea și aplicațiile cu care suntem acum atât de obișnuiți, cum ar fi Gmail sau YouTube. Android Market Beta debuta și ea, oferind posibilitatea de a lista aplicații și jocuri.
@@ -387,7 +439,7 @@ Prima versiune a Android includea și aplicațiile cu care suntem acum atât de 
 Tot în acea perioadă Android și-a câștigat și atât de cunoscutul logo, denumit în interiorul Google „Bugdroid”.\\
 
 %Android Cupcake
-\textbf{Android 1.5 - Cupcake}\\
+\textbf{Android 1.5 - Cupcake \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Primul mare update al Android-ului a fost versiunea 1.5, denumită, în ceea ce avea să stabilească trendul numelor inspirate din dulciuri, „Cupcake”.
 
 	Lansat în aprilie 2009, Cupcake a fost deschizător de drum pentru dispozitivele cu Android fără tastatură fizică. Telefoanele precedente aveau încorporate și tastaturi fizice, însă cu această versiune de sistem de operare, Google a introdus tastatura virtuală, precum și posibilitatea folosirii de tastaturi third-party.
@@ -395,7 +447,7 @@ Primul mare update al Android-ului a fost versiunea 1.5, denumită, în ceea ce 
 	Acestea arătau evenimentele și respectiv melodia curentă. Pentru prima dată aplicațiile puteau să își adauge widget-uri proprii. O altă noutate a fost reprezentată de posibilitatea de a roti automat ecranul în funcție de orientarea telefonului, pentru o tranziție ușoară portret-landscape.\\
 
 %Android Donut
-\textbf{Android 1.6 - Donut}\\
+\textbf{Android 1.6 - Donut \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 În același an al lansării Android 1.5, Google a lansat și noua versiune, 1.6, numită „Donut”.
 	
 	Aceasta aducea suport pentru ecrane de diferite rezoluții și densități ale pixelilor, precum și suport nativ pentru comunicarea în banda CDMA (Code Division Multiple Access). Noul sistem oferea și posibilitatea de a efectua căutări, atât în fișierele aflate pe telefon, cât și pe internet, prin așa numitul „Quick Search Box”. Tot cu această versiune a venit și posibilitatea de a vedea consumul de baterie al dispozitivului.
@@ -403,7 +455,7 @@ Primul mare update al Android-ului a fost versiunea 1.5, denumită, în ceea ce 
 	Android Market a fost refăcut pentru a putea expune aplicațiile gratuite de top, precum și aplicațiile de top plătite, în contextul exploziei de noi aplicații de pe această platformă. Pentru prima dată au fost introduse și butoane care ofereau acces facil la setări precum Wi-Fi, Bluetooth, GPS, Sincronizare sau Luminozitate.\\
 
 %Android Eclair
-\textbf{Android 2.0, 2.0.1, 2.1 - Eclair}\\
+\textbf{Android 2.0, 2.0.1, 2.1 - Eclair \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Lansat în octombrie 2009, Android 2.1, denumit și „Eclair”, a adus câteva îmbunătățiri precum: posibilitatea de a căuta în toate SMS-urile și MMS-urile salvate pe telefon, viteză de tastare mărită pentru tastatura virtuală, setări de accesibilitate, calendar, dar și un API pentru VPN (Virtual Private Network). Pentru browser, Android aducea suport HTML5. Tot acum au apărut double-tap-zoom și pinch-to-zoom.
 	
 	Tot în versiunea Eclair a fost introdusă și posibilitatea de a folosi Google Maps pentru navigație, aceasta oferind indicații pas-cu-pas, dar și informații legate de trafic, caracteristici similare serviciilor de navigație din automobile, cu diferența că cele oferite de Google erau gratuite.
@@ -411,7 +463,7 @@ Lansat în octombrie 2009, Android 2.1, denumit și „Eclair”, a adus câteva
 	O altă funcționalitate care acum este extrem de utilizată și a fost adăugată înca din versiunea Eclair este cea de Speech-to-Text, care permitea introducerea de text dictând telefonului.\\
 	
 %Android Froyo
-\textbf{Android 2.2 - Froyo}\\
+\textbf{Android 2.2 - Froyo \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Poate cea mai importantă noutate a acestei versiuni a fost aceea a introducerii mașinii virtuale Dalvik, care oferea Just-in-time Compiling, oferind îmbunătățiri masive ale vitezei Android-ului.
 
 	Cu această versiune a fost oferită și posibilitatea de a instala sau muta aplicațiile pe cardul de memorie pentru a elibera memoria internă a telefonului. Altă noutate a fost reprezentată de hotspot-ul Wi-Fi, care permitea telefonului să ofere Wi-Fi altor dispozitive.
@@ -419,7 +471,7 @@ Poate cea mai importantă noutate a acestei versiuni a fost aceea a introducerii
 	Browser-ul a cunoscut și el îmbunătățiri ale vitezei prin schimbarea motorului de JavaScript la cel folosit de Chrome, V8.\\
 
 %Android Gingerbread
-\textbf{Android 2.3, 2.3.3 - Gingerbread}\\
+\textbf{Android 2.3, 2.3.3 - Gingerbread \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Cu această nouă versiune a Android a apărut și ceea ce avea să devină un nou obicei al Google, acela de a lansa un telefon sub marcă proprie la câteva versiuni de soft distanță. Aceasă linie de telefoane se va numi Nexus și va fi construită cu producători diferiți la fiecare nouă iterație, ea oferind un Android „curat”. Primul telefon din gama Nexus a fost Nexus S, oferit de către Google în parteneriat cu Samsung.
 
 	Sistemul de operare a adus suport pentru NFC (Near Field Communication), pentru ecrane cu rezoluții mari, pentru telefonie via internet (VoIP), dar și îmbunătățiri ale interfeței vizuale.
@@ -429,7 +481,7 @@ Cu această nouă versiune a Android a apărut și ceea ce avea să devină un n
 	Pentru dezvoltatori a fost îmbunătățit suportul pentru scrierea de cod nativ și s-au introdus API-urile pentru jocuri.\\
 
 %Android Honeycomb
-\textbf{Android 3.0 - Honeycomb}\\
+\textbf{Android 3.0 - Honeycomb \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Această nouă versiune a fost lansată cu scopul de a îmbunătăți experiența de utilizare a sistemului pe tablete. Pe lângă îmbunătățirile aduse la nivelul interfeței grafice, au fost aduse și îmbunătățiri la nivelul suportului pentru procesoare multi-core.
 
 	A fost introdus și API-ul pentru utilizarea Fragmentelor, care permiteau dezvoltatorilor de aplicații sa folosească suprafața mai mare a ecranului unei tablete pentru a afișa mai multe părți ale aplicației. Folosirea Fragmentelor permitea separarea aplicațiilor pentru telefoane de cele pentru tablete într-un mod foarte simplu: dacă exista suficient spațiu, se afișau mai multe fragmente ale aplicației, altfel se afișa doar unul și utilizatorul trebuia să navigheze între acestea.
@@ -437,7 +489,7 @@ Această nouă versiune a fost lansată cu scopul de a îmbunătăți experienț
 	A fost introdus și conceptul de Action Bar, adică acel spațiu din partea superioară a unei aplicații similar unui meniu dintr-o aplicație desktop.\\
 
 %Android Ice Cream Sandwich
-\textbf{Android 4.0 - Ice Creak Sandwich}\\
+\textbf{Android 4.0 - Ice Creak Sandwich \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Această versiune oferea o experiență unificată smartphone-tabletă, ea înlocuind complet versiunea Honeycomb și aducând noutățile ei și pe smartphone-uri.
 
 	A fost îmbunătățit multitaskingul, notificările au devenit mai bogate, ecranul de start au fost și el modificat pentru a se reduce consumul de spațiu. S-a adăugat un sistem de management al consumului de date.
@@ -449,7 +501,7 @@ Această versiune oferea o experiență unificată smartphone-tabletă, ea înlo
 	Una din inovațiile aduse a fost Android Beam. Acest sistem permitea transferul de date între dispozitive care dispuneau de NFC. Acest transfer se făcea cu viteze mai mari decât ale Bluetooth-ului, într-un mod extrem de facil din perspectiva utilizatorului. Acesta trebuia doar să apropie cele două dispozitive și să apese „Trimitere”.\\
 
 %Android JellyBean
-\textbf{Android 4.1, 4.2, 4.3 - Jelly Bean}\\
+\textbf{Android 4.1, 4.2, 4.3 - Jelly Bean \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Această iterație a Android a adus noi îmbunătățiri la capitolul viteză prin introducerea „Project Butter”, care implementa Vsync și triple-buffering. Notificările au fost și ele modificate, putând conține acum până la 8 linii de text și chiar butoane la baza lor. Aceste butoane puteau fi folosite pentru a lua acțiuni în funcție de notificare.
 
 	În Android Jelly Bean a fost lansat și Google Now, asistentul virtual al Google. Acesta oferă informații legate de vremea din locația curentă, precum și despre timpii necesari pentru a ajunge între diferite locații.
@@ -459,7 +511,7 @@ Această iterație a Android a adus noi îmbunătățiri la capitolul viteză pr
 	Alte îmbunătățiri sunt date de adăugarea HDR (High Dynamic Range), a Bluetooth Low Energy, dar și a OpenGL ES3.0, care aducea sporuri de performanță la nivel grafic.\\
 
 %Android KitKat
-\textbf{Android 4.4 - KitKat}\\
+\textbf{Android 4.4 - KitKat \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Poate cea mai importantă funcționalitate adăugată cu această versiune este cea a interacțiunii cu telefonul prin comenzi vocale. Faimosul „Ok, Google” a fost oferit începând cu această versiune. Tot acum s-au făcut eforturi pentru ca Android să poată rula mai bine pe dispozitive mai slabe din punct de vedere hardware. Acum Android putea rula chiar și pe 512 MB de RAM.
 
 	S-a adăugat și un nou sistem de acces la stocare, care a permis dezvoltatorilor precum Box sau Dropbox să integreze serviciile lor direct cu memoria telefonului, oferind acces facil la documente din locații diferite.
@@ -467,7 +519,7 @@ Poate cea mai importantă funcționalitate adăugată cu această versiune este 
 	Au fost imbunătățiți și senzorii, prin reducerea consumului lor de baterie. Android nu  mai trimite notificările imediat cum senzorii observă modificările, ci le stochează până are suficiente.  Acum au fost introduși și senzorii de detectare a pașilor și de numărare a pașilor.\\
 	
 %Android Lollipop
-\textbf{Android 5.0, 5.1 - Lollipop}\\
+\textbf{Android 5.0, 5.1 - Lollipop \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Android Lollipop a fost versiunea în care a apărut noul stil vizual propus de Google, „Material Design”. Acest ghid despre cum trebuie să arate interfața vizuală a aplicației a fost un mare pas către unificarea experienței de utilizare a aplicațiilor de pe această platformă.
 	
 	Material Design este un set de reguli de design inspirat din modul în care arată hârtia în diferite combinații de lumini și umbre.
@@ -478,7 +530,7 @@ Componentele grafice din aplicații erau acum reprezentate într-un mod minimali
 	Tot începând cu această versiune Android și-a făcut apariția și în zona TV, prin lansarea Android TV. Android nu s-a oprit însă la zona TV, el apărând și în zona auto, prin Android Auto.\\
 
 %Android Marshmallow	
-\textbf{Android 6.0 - Marshmallow}\\
+\textbf{Android 6.0 - Marshmallow \cite{AndroidVersionsHistory}, \cite{AndroidHistory}, \cite{DeveloperAndroid}}\\
 Android Marshmallow a introdus un nou sistem de permisiuni pentru aplicații. Acest nou model presupunea ca aplicația să ceară drepturi de la utilizator nu la instalare, ci atunci când îi era necesar. Prin acest nou set de reguli se dorea ca utilizatorii să știe mai clar ce acceptă, deoarece înainte utilizatorii nu erau neapărat atenți la ce acceptau, și puteau exista aplicații care să poată avea acces la mai multe date decât le era necesar. Existau aplicații de genul „Lanternă” care aveau acces la contacte, locație, microfon și cameră. Genul acesta de permisiuni sunt în mod clar un pericol la intimitatea utilizatorilor, iar cu Android 6.0 Google a încercat să îl limiteze.
 
 	O altă componentă a sistemului unde cei de la Google au adus îmbunătățiri este cea a consumului de baterie. Prin adăugarea „Doze” și a „App Standby”, aplicațiile consumă acum mai puțină baterie.
@@ -486,7 +538,7 @@ Android Marshmallow a introdus un nou sistem de permisiuni pentru aplicații. Ac
 	În Marshmallow s-a adăugat și Now On Tap, un asistent virtual care permite să afli informații fără să părăsești aplicația curentă. Este util atunci când vrei să afli ce reprezintă ceva din aplicația curentă.\\
 
 %Android N
-\textbf{Android N}\\
+\textbf{Android N \cite{DeveloperAndroid}}\\
 O nouă versiune a Android este în dezvoltare acum, aceasta având numele de cod „Android N”. Un nume care să urmeze linia numelor inspirate din produse dulci este în curs de a fi ales, Google oferind utilizatorilor posibilitatea să recomande și să voteze numele.
 	
 	Versiunea Android N este acum în developer preview. Aceast Android promite îmbunătățiri în 3 zone cheie: performanță, productivitate și securitate.
@@ -657,9 +709,60 @@ API-ul se ocupă în mod automat de tot ce înseamnă comunicarea cu serverele G
 
 \newpage
 \section{Descrierea soluției implementate} \label{DescriereAplicatie}
-TODO
+Acest capitol va conține descrierea implementării aplicației, începând cu explicarea \textbf{interfeței vizuale} a aplicației și continuând cu explicarea \textbf{funcționalității} din fundal (aflare poziție GPS, detectare pași, măsurare pași, algoritm dead reckoning).
+
+\subsection{Interfața} \label{DescriereInterfata}
+Aplicația conține o \textbf{activitate} principală care oferă acces către mai multe \textbf{fragmente}. Fiecare fragment va oferi utilizatorului final o funcționalitate din cele descrise la început, în obiective.
+
+Fragmentele oferite utilizatorului sunt următoarele, în ordinea apariției lor în meniul de navigație care apare din partea stângă (numit în cadrul Android \textit{NavigationDrawer}):
+
+\begin{itemize}  
+\item \textbf{Fragment Home}:\\
+Acest fragment va oferi utilizatorului butoane prin care să navigheze în restul aplicației. Aceste butoane sunt prezente și în meniul din partea stângă, însă acesta este ascuns la deschiderea aplicației și de aceea a fost necesară implementarea unui fragment care să ofere aceeași funcționalitate. Modul în care arată acest fragment este surprins în Figura \ref{fig:fragment_home}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{figures/fragment_home.png}
+\caption{Fragment Home}
+\label{fig:fragment_home}
+\end{figure}
 
 
+\item \textbf{Fragment Map}:\\
+Acest fragment este probabil cel mai important din întreaga aplicație, el fiind locul în care se văd clar rezultatele algoritmului din fundal. Acest fragment afișează poziția curentă, fie ea poziție GPS sau poziție calculată de algoritmul de dead reckoning, așa cum poate fi văzut în Figura \ref{fig:fragment_map}.
+
+În cazul în care utilizatorul se deplasează, se va afișa și calea parcursă de acesta, bazată pe datele oferite de algoritmul de dead reckoning, care va fi explicat în secțiunea următoare.
+
+Tot în acest fragment se afișează și eventualele puncte de interes căutate de către utilizator, așa cum poate fi văzut în Figura \ref{fig:fragment_map_interest_point}.
+
+\begin{figure}[!htb]
+\minipage{0.45\textwidth}
+  \includegraphics[width=5cm]{figures/fragment_map.png}
+  \caption{FragmentMap - Locația curentă}
+  \label{fig:fragment_map}
+\endminipage\hfill
+\minipage{0.45\textwidth}%
+  \includegraphics[width=5cm]{figures/fragment_map_interest_point.png}
+  \caption{FragmentMap - Afișare punct de interes}
+  \label{fig:fragment_map_interest_point}
+\endminipage
+\end{figure}
+
+\item \textbf{Fragment Status}:\\
+Acest fragment este util în special pentru faza de testare sau pentru cei curioși de cum variază diferiții parametri ai aplicației pe parcursul rulării acesteia.
+
+În acest fragment se afișează valorile curente obținute de la senzori, cum ar fi acyratețea GPS-ului, locația GPS curentă, numărul de pași numărați, lungimea ultimului pas, valoare unghiului cu care suntem orientați relativ la nord, valori pentru accelerație și giroscop.
+
+Toate aceste informații sunt afișate într-o listă, așa cum poate fi observat în captura de ecran a acestui fragment din Figura \ref{fig:fragment_status}.
+
+\begin{figure}[h]
+\centering
+\caption{FragmentStatus}
+\label{fig:fragment_status}
+\end{figure}
+
+
+\end{itemize}
 
 \newpage
 \section{Testarea soluției implementate} \label{TestareAplicatie}
