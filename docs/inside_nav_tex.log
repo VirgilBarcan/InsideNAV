@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  21 JUN 2016 02:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.12)  22 JUN 2016 01:03
 entering extended mode
 **./inside_nav_tex.tex
 (inside_nav_tex.tex
@@ -1418,21 +1418,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
+[42] <figures/walk_wave.png, id=198, 602.25pt x 372.39125pt>
+File: figures/walk_wave.png Graphic file (type png)
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.71667pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+<use figures/walk_wave.png>
+Package pdftex.def Info: figures/walk_wave.png used on input line 836.
+(pdftex.def)             Requested size: 284.52756pt x 175.93874pt.
 
-[43]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44] (inside_nav_tex.bbl
+[43 <./figures/walk_wave.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1440,6 +1446,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [45]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.71667pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48] (inside_nav_tex.bbl
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49]
 Underfull \hbox (badness 10000) in paragraph at lines 93--98
 \OT1/cmtt/m/n/12 google . com / store / apps / details ? id = com . osmium . an
 droid . dare/$\OT1/cmr/m/n/12 ,
@@ -1475,22 +1509,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46])
+[50]
+Underfull \hbox (badness 6542) in paragraph at lines 200--203
+[]\OT1/cmr/m/n/12 JavadocMD.  sim-ple-la-tlng.  $\OT1/cmtt/m/n/12 https : / / g
+ithub . com / JavadocMD /
+ []
+
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47] (inside_nav_tex.aux) ) 
+[51] (inside_nav_tex.aux) ) 
 Here is how much of TeX's memory you used:
- 15376 strings out of 493335
- 292965 string characters out of 3126764
- 329948 words of memory out of 3000000
- 18555 multiletter control sequences out of 15000+200000
+ 15396 strings out of 493335
+ 293326 string characters out of 3126764
+ 330054 words of memory out of 3000000
+ 18574 multiletter control sequences out of 15000+200000
  17714 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,56p,807b,554s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,18n,56p,881b,554s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Virgil Barcan/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/
@@ -1518,9 +1558,9 @@ fb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy8.pfb><C:/Users/Virgil Barcan/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Virgil Barcan/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on inside_nav_tex.pdf (50 pages, 1538733 bytes).
+Output written on inside_nav_tex.pdf (54 pages, 1571646 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
+ 296 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

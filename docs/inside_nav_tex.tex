@@ -807,25 +807,96 @@ Utilizatorul trebuie să introducă numele punctului căutat. După ce vor fi sc
 \item \textbf{Fragment Pedometer}:\\
 Acest fragment poate fi util atunci când utilizatorul dorește doar să știe câți pași a făcut. Aici îi vor fi afișați toți pașii făcuți de când a început ziua. Acest fragment are o interfață simplistă, el existând doar pentru a apropia aplicația de zona de fitness. Interfața este cea din Figura \ref{fig:fragment_pedometer}.
 
+\item \textbf{Fragment About}:\\
+Acest fragment conține scurte detalii despre mine și despre aplicație, el nu face parte din lista fragmentelor relavante, așa cum sunt cele de mai sus.
 
 \end{itemize}
 
 \newpage
+\subsection{Implementarea} \label{DescriereImplementare}
+Implementarea aplicației s-a făcut având în vedere un consum cât mai redus de baterie, printr-o utilizare cât mai eficientă a resurselor. De aceea am luat decizia de a ascunde funcționalitățile „mari” în spatele unor module care să poată fi referențiate de mai multe obiecte, dar create doar o dată. Astfel de module sunt: \textbf{DeadReckoning} și \textbf{LocationHandler}. 
+
+Modulul DeadReckoning este cel în care se calculează, bazat pe datele de la modulul de detecție al pașilor și al lungimii acestora, plus cele de la detectorul de schimbare a orientării față de nord, cunoscând poziția inițială, poziția curentă. Vom explica mai jos exact cum se face acest lucru.
+
+Modulul LocationHandler este cel în care se face „ascultarea” poziției GPS curente, precum și a statusului acestui senzor (dacă este sau nu suficient de precisă poziția pentru a fi luată în considerare).
+
+În rândurile următoare vom explica modul în care lucrează modulul de DeadReckoning (împreună cu modulele de care el depinde). 
+
+\subsubsection{Dead Reckoning} \label{DeadReckoning}
+Această clasă are un dublu comportament, unul de subiect și unul de observator (din perspectiva pattern-ului \textit{Observer}). El „ascultă” schimbările detectate de către detectorul de pași sau de către detectorul de schimbare a orientării și reacționează. Concret, detectorul de schimbare a orientării notifică faptul că avem un unghi nou față de nord iar clasa DeadReckoning stochează acest unghi actualizat. Detectorul de pași notifică atunci când detectează că un pas s-a făcut și clasa DeadReckoning foloște ultimul unghi primit de la detectorul de orientare împreună cu lungimea estimată a pasului pentru a calcula, având o ultimă poziție GPS, noile coordonate.
+
+Descriu în continuare modul în care se face detecția pașilor, partea de orientare fiind obținută prin utilizarea unui modul extern obținut de la \cite{dsensor}.
+
+Primul pas este colectarea datelor de la senzori. Datele primite de la senzori sunt stocate în interiorul clasei care ascultă evenimentele. Atunci când avem date pentru accelerația liniară, gravitație (ambele derivate din accelerația obținută de la accelerometru) și câmp magnetic, intrăm în procedura de transformare a sistemului de coordonate al datelor din cel local, descris în Figura \ref{fig:axis_device}, în cel global, descris în Figura \ref{fig:axis_globe}. Având datele în acest format, garantăm că putem detecta pașii indiferent de modul în care utilizatorul ține dispozitivul. Acesa poate să il țină în mână în orice poziție, în buzunar, etc. Algoritmul reușeste să detecteze pașii atât timp cât dispozitivul nu este supus unor alte mișcări, independent de mișcările utilizatorului.
+
+Detecția pașilor se face analizând forma undei generate. Așa cum se poate observa din Figura \ref{fig:walk_wave}, unda rezultată în urma efectuării unor pași are o formă relativ în care găsim zone de accelerație minimă și zone de accelerație maximă. Zonele de accelerație minimă apar atunci când persoana atinge pământul cu călcâiul, iar cele de accelerație maximă atunci când piciorul este ridicat și în balans către pasul următor. Există numeroase studii în legătură cu mersul uman, \cite{HumanWalkAndRunParameters}, \cite{HumanGaitCycle}, \cite{WalkCycle}, însă ce este relevant pentru proiectul acesta este că putem detecta destul de simplu dacă un pas a fost sau nu făcut.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm]{figures/walk_wave.png}
+\caption{Unda accelerometru pentru trei pași}
+\label{fig:walk_wave}
+\end{figure}
+
+Pentru a detecta dacă un pas a fost sau nu făcut, urmărim fie apariția unei scăderi a accelerației către un minim local, fie apariția unei creșteri a accelerației către un maxim local. Diferența în valoare absolută între minim și maxim trebuie să se încadreze într-o marjă pentru ca un pas să fie numărat. Aceste marjă este, la început, una generală, însă după calibrare ea va fi una care se va „plia” după utilizator.
+
+Putem descrie algoritmul de detecție a pașilor foarte simplu, numărăm câte schimbări minim-maxim, maxim-minim au avut loc. Numărul de pași este suma celor două valori aproximată prin adaos (preferăm să numărăm un pas în plus).
+
+După detectarea pasului, trebuie estimată distanța parcursă. Pentru a face asta, folosim formula descrisă de Harvey Weinberg în \cite{HarveyWeinberg}: lungimea unui pas k, $\rho_{k}$, este $\rho_{k} = K \sqrt[4]{A_{max}^{(k)} + A_{min}^{(k)}}$, unde $A_{max}^{(k)}$ este valoarea maximă a accelerației în timpul celui de-al k-lea pas, $A_{min}^{(k)}$ este valoarea minimă a accelerației în timpul celui de-al k-lea pas, iar $K$ este o constantă dependentă de utilizator. Această constantă este definită ca raportul dintre lungimea reală parcursă de utilizator și lungimea estimată (folosind doar radicalul). Pentru a o afla avem o fază de calibrare. Altfel, această valoare este una predefinită și erorile pot fi destul de mari.
+
+Având la dispoziție informația că s-a realizat un pas și știind și lungimea acestuia, modulul de detecție a pașilor poate anunța modulul de dead reckoning.
+
+Având la dispoziție date despre orientarea curentă și lungimea ultimului pas, pe lângă datele privind ultima poziție (latitudine, longitudine), algoritmul de dead reckoning va esima poziția curentă folosind Formula lui Vincenty, descrisă în \cite{VincentyFormulae}. Deși detaliile matematice sunt peste scopul acestei lucrări, este important de menționat ce poate face această formulă. 
+
+Formula este folosită atât pentru aflarea distanței dintre două puncte aflate pe Pământ la coordonate date, cât și la aflarea coordonatelor unui punct destinație cunoscând coordonatele punctului de start, distanța parcursă și orientarea. Deși există soluții mai simple pentru această problemă (de exemplu, formula haversină \cite{HaversineFormula}), această soluție este una extrem de precisă: până la $0.5mm$ pentru distanță și $0.000015″$ pentru orientare. Deși există o variantă îmbunătățită a acestei formule, propusă de Charles Karney \cite{Karney2013}, acea metodă nu este atât de simplu de implementat. De mare ajutor în partea de implementare a fost biblioteca găsită pe Github, simplelatlng \cite{simplelatlng}.
+
+Având la dispoziție datele despre poziția curentă calculată, modulul de dead reckoning va anunța toți observatorii, pentru ca aceștia să își modifice stările. De exemplu, FragmentMap va afișa un marker cu noua poziție, precum și linia care arată ruta dintre ultima poziție și cea curentă.
+
+
+\subsubsection{Location Handler} \label{LocationHandler}
+Clasa care se ocupă de locație este LocationHandler. Această clasă are o implementare similară cu cea a clasei DeadReckoning, în sensul că ea este și subiect și observator. 
+
+Clasa ascultă notificările venite de la serviciul de locație al Android, implementând interfața LocationListener. Atunci când primește notificarea de locație schimbată, clasa verifică daca statusul serviciului era unul care să garanteze că datele sunt unele de încredere (acuratețe ridicată și 3D Fix pornit).
+
+Dacă datele sunt de încredere, clasa notifică mai departe toți observatorii.
+
+\newpage
 \section{Testarea soluției implementate} \label{TestareAplicatie}
-TODO
+Testarea s-a făcut folosind un smartphone LG G2 dotat cu accelerometru, giroscop și magnetometru, pe lângă alți senzori.
+
+Pentru testare se vor lua în calcul două chestiuni, performanța detectorului de pași și performanța sistemului per total. Pentru a evalua performanța detectorului de pași se vor face teste folosind detectorul standard de pași oferit de Google Fit, o brățară Jawbone și telefonul cu algoritmul prezentat în lucrare. Se vor face 100 de pași numărați și se vor verifica rezultatele celor trei.
+
+Pentru a evalua performanța sistemului per total, se vor efectua două feluri de teste, ambele în aer liber. Se va aștepta conectarea GPS-ului, care va fi considerat referință. Se vor efectua teste în linie dreaptă și teste cu căi care să conțină manevre la stânga, respectiv dreapta, în forma unui dreptunghi. Se vor urma mereu aceleași căi și se va verifica dacă ruta oferită de GPS este aceeași cu ruta oferită de algoritm, ambele comparate cu ruta reală, cunoscută.
 
 
 \newpage
-\section{Discuții și muncă ulterioară} \label{Discutii}
+\section{Discuții și muncă ulterioară} \label{DiscutiiMuncaUlterioara}
+\section{Discuții} \label{Discutii}
 TODO
 
 
+\section{Muncă ulterioară} \label{MuncaUlterioara}
+Aplicația prezentată este doar un prototip, ea nefolosind algoritmi deosebit de avansați. O primă chestiune de îmbunătățit este folosirea unei metode de genul unui filtru Kalman extins (unul extins deoarece datele nu respectă neapărat o condiție de liniaritate). Alte posibilități, așa cum au studiat și alții, ar fi acelea ale unor filtre de particule sau filtre probabiliste.
+
+Merită încercată o astfel de îmbunătățire a algoritmului folosit pentru aducerea unui plus de performanță. Totuși, această folosire a unui algoritm performant aduce cu sine și un consum ridicat de baterie. O altă îmbunătățire ar fi, deci, găsirea unei soluții fie de a efectua calculele cât mai eficient, fie de a le face pe un alt dispozitiv, cum ar fi în cloud.
+
+Printre alte îmbunătățiri ce ar putea fi aduse, deși nu neapărat aplicației în sine, ar fi încercarea de a cartografia clădiri mari din zona Iași, cum ar fi mall-urile sau universitatea. Aplicația poate avea un potențial uriaș în a ajuta elevii care doresc să se înscrie la facultate să găsească facultatea și, ulterior, sălile.
+
+Probabil o altă arie ce ar putea deveni interesantă ar fi aceea a oferirii aplicației în parteneriat cu magazine mari (cum ar fi Carrefour sau Auchan) ca un asistent virtual pentru găsirea de produse/rafturi.
+
+Desigur, una dintre cele mai importante utilizări ar putea fi găsită în zona Palas, în special în parcare. O eventuală cartografiere pe Google Maps, susținută de o îmbunătățire a aplicației, ar putea-o transforma în una de mare ajutor acolo.
+
+Se mai pot aduce, desigur, și noi funcționalități, cum ar fi oferirea de sugestii de magazine care oferă reduceri sau oferirea de informații despre diferite zone din interiorul clădirilor (picturile din corpul A al Universității, de exemplu).
 
 \newpage
 \section{Concluzii} \label{Concluzii}
-TODO
+Din punctul meu de vedere această lucrare a fost un succes, obiectivele stabilite la începutul ei fiind atinse. Deși mai sunt lucruri de îmbunătățit, ideea în sine este una cu potențial, fapt dovedit de încercările Google de a cartografia cât mai multe clădiri (există posibilitatea trimiterii de hărți către ei, sistemul fiind unul deschis).
 
+Munca la această lucrare a presupus o aprofundată cercetare a unor domenii dintre cele mai vaste: începând de la studiul senzorilor și continuând cu studiul sistemului GPS, al modului în care funcționează mersul uman, al modului în care se fac lucrurile în Android, și încheind cu studiul unor algoritmi dintre cei mai diverși: de la cei probabiliști la algoritmi de estimare sau de calculare deterministă.
 
+Efortul depus a adus însă satisfacția de a pune o idee în practică, iar pentru asta eu sunt extrem de mulțumit.
+
+Sper ca în perioada ce urmează să se insiste mai mult pe acest domeniu încă neexplorat suficient deoarece este clar că acesta este unul extrem de interesant și cu un potențial enorm de a aduce o îmbunătățire a calității călătoriilor.
 
 \newpage
 \addcontentsline{toc}{section}{Bibliografie}

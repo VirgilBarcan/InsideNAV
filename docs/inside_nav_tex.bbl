@@ -155,4 +155,50 @@ Inc. Google.
 \newblock {Android Developer}.
 \newblock \url{https://developer.android.com/}, 2016.
 
+\bibitem{dsensor}
+hoananguyen.
+\newblock {dsensor}.
+\newblock \url{https://github.com/hoananguyen/dsensor/}, 2016.
+
+\bibitem{HumanWalkAndRunParameters}
+Danguolė Satkunskienė, Vytautas Grigas, Valdas Eidukynas, and Aurelijus
+  Domeika.
+\newblock Acceleration based evaluation of the human walking and running
+  parameters.
+\newblock {\em Journal of Vibroengineering}, 2009.
+
+\bibitem{HumanGaitCycle}
+Davrondzhon Gafurov, Einar Snekkenes, and Patrick Bours.
+\newblock Gait authentication and identification using wearable accelerometer
+  sensor.
+\newblock In {\em Automatic Identification Advanced Technologies, 2007 IEEE
+  Workshop on}, pages 220--225, June 2007.
+
+\bibitem{WalkCycle}
+Lan Kun-Chan and Shih Wen-Yuah.
+\newblock On calibrating the sensor errors of a pdr-based indoor localization
+  system.
+\newblock {\em Sensors}, 13(4):4781, 2013.
+
+\bibitem{VincentyFormulae}
+T.~Vincenty.
+\newblock Direct and inverse solutions of geodesics on the ellipsoid with
+  application of nested equations.
+\newblock {\em Survey Review}, 23(176):88--93, 1975.
+
+\bibitem{HaversineFormula}
+Wikipedia.
+\newblock {Haversine formula}.
+\newblock \url{https://en.wikipedia.org/wiki/Haversine_formula/}, 2016.
+
+\bibitem{Karney2013}
+Charles F.~F. Karney.
+\newblock Algorithms for geodesics.
+\newblock {\em Journal of Geodesy}, 87(1):43--55, 2013.
+
+\bibitem{simplelatlng}
+JavadocMD.
+\newblock {simplelatlng}.
+\newblock \url{https://github.com/JavadocMD/simplelatlng}, 2010.
+
 \end{thebibliography}
