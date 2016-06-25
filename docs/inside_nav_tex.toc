@@ -30,8 +30,8 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Dead Reckoning}{42}
 \contentsline {subsubsection}{\numberline {5.2.2}Location Handler}{44}
 \contentsline {section}{\numberline {6}Testarea solu\IeC {{\textcommabelow t}}iei implementate}{46}
-\contentsline {section}{\numberline {7}Discu\IeC {{\textcommabelow t}}ii \IeC {{\textcommabelow s}}i munc\IeC {\u a} ulterioar\IeC {\u a}}{47}
-\contentsline {section}{\numberline {8}Discu\IeC {{\textcommabelow t}}ii}{47}
-\contentsline {section}{\numberline {9}Munc\IeC {\u a} ulterioar\IeC {\u a}}{47}
-\contentsline {section}{\numberline {10}Concluzii}{48}
-\contentsline {section}{Bibliografie}{49}
+\contentsline {section}{\numberline {7}Discu\IeC {{\textcommabelow t}}ii \IeC {{\textcommabelow s}}i munc\IeC {\u a} ulterioar\IeC {\u a}}{48}
+\contentsline {subsection}{\numberline {7.1}Discu\IeC {{\textcommabelow t}}ii}{48}
+\contentsline {subsection}{\numberline {7.2}Munc\IeC {\u a} ulterioar\IeC {\u a}}{49}
+\contentsline {section}{\numberline {8}Concluzii}{50}
+\contentsline {section}{Bibliografie}{51}

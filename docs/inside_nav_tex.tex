@@ -60,6 +60,10 @@
 \clearpage
 %% ----------------------------------------------------------------
 
+\mbox{}
+\thispagestyle{empty}
+\newpage
+
 %% --------------Page Title----------------------------------------
 \pagestyle{empty}
 \centerline{\textbf{\large{\textsf{UNIVERSITATEA „ALEXANDRU IOAN CUZA” IAȘI}}}}
@@ -864,18 +868,64 @@ Dacă datele sunt de încredere, clasa notifică mai departe toți observatorii.
 \section{Testarea soluției implementate} \label{TestareAplicatie}
 Testarea s-a făcut folosind un smartphone LG G2 dotat cu accelerometru, giroscop și magnetometru, pe lângă alți senzori.
 
-Pentru testare se vor lua în calcul două chestiuni, performanța detectorului de pași și performanța sistemului per total. Pentru a evalua performanța detectorului de pași se vor face teste folosind detectorul standard de pași oferit de Google Fit, o brățară Jawbone și telefonul cu algoritmul prezentat în lucrare. Se vor face 100 de pași numărați și se vor verifica rezultatele celor trei.
+Pentru testare se vor lua în calcul două chestiuni, performanța detectorului de pași și performanța sistemului per total. Pentru a evalua performanța detectorului de pași se vor face teste folosind detectorul standard de pași oferit de Google, Google Fit și telefonul cu algoritmul prezentat în lucrare. Se vor face 100 de pași numărați și se vor verifica rezultatele celor trei.
 
 Pentru a evalua performanța sistemului per total, se vor efectua două feluri de teste, ambele în aer liber. Se va aștepta conectarea GPS-ului, care va fi considerat referință. Se vor efectua teste în linie dreaptă și teste cu căi care să conțină manevre la stânga, respectiv dreapta, în forma unui dreptunghi. Se vor urma mereu aceleași căi și se va verifica dacă ruta oferită de GPS este aceeași cu ruta oferită de algoritm, ambele comparate cu ruta reală, cunoscută.
+
+În urma efectuării testelor pentru calcularea erorii detectorului de pași, rezultatele sunt următoarele, detectorul de pași greșește cu o valoare în jurul lui 10\%. Concret, pentru 100 de pași făcuți, algoritmul numără aproximativ 90 de pași.
+
+Testele efectuate pentru sistemul în întregimea lui au avut următoarele rezultate:
+
+\begin{itemize}  
+\item Pentru testele în linie dreaptă:
+
+Implementarea are o eroare situată în jurul valorii de 10-15\%, în funcție de cât de bine s-a făcut primul fix GPS.
+
+Se observă că algoritmul depinde foarte multe de această primă poziție GPS, aceasta nefiind însă de mare încredere. Pe dispozitivul de test s-au observat fluctuații și de zeci de metri ale poziției GPS, fapt care determină algoritmul să aibă încă de la început rezultate proaste, așa cum se observă și în Figura \ref{fig:gps_error_start}, în care s-a făcut un parcurs în parcarea Continental Automotive. Dacă semanlul GPS de start ar fi fost corect, implementarea ar fi avut o eroare mică, în jurul a 2-4 metri.
+
+\item Pentru testele în formă de dreptunghi:
+
+Implementarea are erori chiar mai mari în acest caz. Pe lângă problema cu primul fix GPS, pentru cazul în care se urmează un parcurs în care este nevoie și de orientare, algoritmul de detecție a unghiului față de nord este unul extrem de predispus la erori. Citirile senzorului de câmp magnetic sunt perturbate puternic de orice obiect feromagnetic, determinând detectarea unor unghiuri care nu există. În faza de dezvoltare s-a observat variație a unghiului determinat și de 20\degree.
+
+Aceste mari variații sunt greu de combătut, și, deși în soluția implementată nu sunt atât de mari, ele tot există și aduc deviații în algoritm.
+
+\end{itemize}
+
+S-au făcut și câteva teste în afara celor standard descrise mai sus, iar aceste sunt mulțumitoare ca rezultate, așa cum se poate observa în Figura \ref{fig:good_path1}. Concret, eroare reală acolo a fost de maxim 3 metri la un parcurs de câteva sute de metri între două intersecții din zona Nicolina. Rezultate precum cel din figură sunt extrem de mulțumitoare.
+
+\begin{figure}[!htb]
+\minipage{0.45\textwidth}
+  \centering
+  \includegraphics[width=5cm]{figures/good_path1.png}
+  \caption{Exemplu de poziționare bună}
+  \label{fig:good_path1}
+\endminipage\hfill
+\minipage{0.45\textwidth}%
+  \centering
+  \includegraphics[width=5cm]{figures/gps_error_start.png}
+  \caption{Exemplu de start eronat dat de GPS}
+  \label{fig:gps_error_start}
+\endminipage
+\end{figure}
 
 
 \newpage
 \section{Discuții și muncă ulterioară} \label{DiscutiiMuncaUlterioara}
-\section{Discuții} \label{Discutii}
-TODO
+\subsection{Discuții} \label{Discutii}
+Având în vedere rezultatele de test, principala discuție ce trebuie făcută este cea a erorilor. Erorile sunt destul de mari, însă mare parte din acestea sunt cauzate de existența unor senzori slabi, cu acuratețe relativ redusă.
+
+O variație atât de mare a poziției GPS nu este acceptabilă în nicio situație, însă în condițiile unor dispozitive ieftine, este de așteptat ca aceasta să nu se îmbunătățească prea devreme. Va trebui, deci, găsită o soluție pentru remedierea acestei probleme a dependenței de un senzor extrem de imprecis pentru ceea ce se dorește implementat prin această lucrare.
+
+De asemenea, o variație a câmpului magnetic atât de mare este extrem de problematică, mai ales în interiorul clădirilor, acolo unde există extrem de multe surse de câmp (routere, alte dispozitive mobile, etc.) Totuși, această variație poate fi probabil combătută de algoritmi suplimentari de map-matching.
+
+O mare cauză a erorilor este și faptul că dispozitivul nu este neapărat fix în raport cu corpul utilizatorului. Este imposibil ca acesta să reușească să mențină poziția dispozitivului, ceea ce duce la detectări eronate de pași. În mod cert trebuie îmbunătățit algoritmul de detecție a pașilor și probabil trebuie găsită o modalitate de filtrare a mișcărilor care nu respectă un model de mișcare cum ar fi mersul sau alergatul.
+
+Alte erori provin din modul de lucru al algoritmului, din calculele în virgulă mobilă, precum și din faptul că lungimea pasului este estimată, nu neapărat cea reală. Probabil că o eventuală folosire a unor dispozitive cum sunt smartwatch-urile ar putea aduce noi date în ecuație, date care să le corecteze pe cele de pe telefon. Se pot descrie algoritmi care să înțeleagă mai bine fiziologia mersului uman (să se folosească și de balansul mâinilor în estimări) și astfel să ofere valori estimate ale lungimii unui pas mult mai bune.
+
+Vor rămâne, indiscutabil, erori în sistem. Ca orice program care trebuie să funcționeze în timp real având la dispoziție date de la senzori, vor exista mereu erori și tot ce se va oferi ca rezultat va fi o estimare. Totuși, aceste estimări pot avea valori apropiate de valorile reale. De exemplu, în industria automotive erorile au ajuns extrem de mici, de ordinul metrilor sau chiar mai puțin.
 
 
-\section{Muncă ulterioară} \label{MuncaUlterioara}
+\subsection{Muncă ulterioară} \label{MuncaUlterioara}
 Aplicația prezentată este doar un prototip, ea nefolosind algoritmi deosebit de avansați. O primă chestiune de îmbunătățit este folosirea unei metode de genul unui filtru Kalman extins (unul extins deoarece datele nu respectă neapărat o condiție de liniaritate). Alte posibilități, așa cum au studiat și alții, ar fi acelea ale unor filtre de particule sau filtre probabiliste.
 
 Merită încercată o astfel de îmbunătățire a algoritmului folosit pentru aducerea unui plus de performanță. Totuși, această folosire a unui algoritm performant aduce cu sine și un consum ridicat de baterie. O altă îmbunătățire ar fi, deci, găsirea unei soluții fie de a efectua calculele cât mai eficient, fie de a le face pe un alt dispozitiv, cum ar fi în cloud.
