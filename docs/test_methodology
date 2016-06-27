@@ -1,0 +1,16 @@
+Linear Path:
+	Start:		47.136118°, 27.575790°
+	Stop:		47.135668°, 27.576590°
+	Distance:	79 meters
+	Steps:		130 steps
+
+Rectangular Path:
+	Start/End:	47.136118°, 27.575790°
+	1:			47.135668°, 27.576590°
+	2:			47.135550°, 27.576444°
+	3:			47.136067°, 27.575717°
+	Distance:	183 meters
+	Steps:		290 steps
+
+
+	1 -> 2: 	8.5 meters

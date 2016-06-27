@@ -1,0 +1,88 @@
+Linear Path:
+	Test 1:
+		Start:		47.13618463132907; 27.57555474395412
+		Stop:		47.13565842731097; 27.576366379338467
+		Distance:	84.932 meters
+		Steps:		81 steps
+
+	Test 2:
+		Start:		47.13563808181285; 27.576551969296272;
+		Stop:		47.13596250907699; 27.575595920253537;
+		Distance:	81.002 meters
+		Steps:		78 steps
+
+	Test 3:
+		Start:		47.13613976953401; 27.57580489140378;
+		Stop:		47.135671402768516; 27.57657548247044;
+		Distance:	78.286 meters
+		Steps:		78 steps
+
+	Test 4:
+		Start:		47.136102166999144; 27.5757837400267;
+		Stop:		47.13565489791811; 27.57655673160265;
+		Distance:	76.885 meters
+		Steps:		76 steps
+
+	Test 5:
+		Start:		47.13573678510267; 27.576477444421368;
+		Stop:		47.13604783429398; 27.575629059559372;
+		Distance:	73.063 meters 
+		Steps:		61 steps
+
+	Test 6:
+		Start:		47.136125592521296; 27.575739356977106;
+		Stop:		47.13562286271047; 27.57660110717355;
+		Distance:	86.009 meters
+		Steps:		78 steps	
+
+	Test 7:
+		Start:		47.136247563051626; 27.57587608940547;
+		Stop:		47.13573416864445; 27.57674976261446;
+		Distance:	87.468 meters
+		Steps:		81 steps
+
+Rectangular Path:
+	Test 1:
+		Start:		47.13613976953401;27.57580489140378;
+		1:			
+		2:			
+		3:			
+		End:		47.1360419689068;27.575813737270092;
+		Distance:	
+		Steps:		
+
+	Test 2:
+		Start:		
+		1:			
+		2:			
+		3:			
+		End:			
+		Distance:	
+		Steps:		
+
+	Test 3:
+		Start:		
+		1:			
+		2:			
+		3:			
+		End:			
+		Distance:	
+		Steps:		
+
+	Test 4:
+		Start:		
+		1:			
+		2:			
+		3:			
+		End:			
+		Distance:	
+		Steps:		
+
+	Test 5:	
+		Start:		
+		1:			
+		2:			
+		3:			
+		End:			
+		Distance:	
+		Steps:			
